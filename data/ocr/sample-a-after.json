@@ -1,0 +1,624 @@
+{
+  "image_sha256": "723c1cd02ba58a237abe6e493481670d919ee2d1e7ca632d22bf2cc9dfa92d59",
+  "prompt_sha256": "74a1e329ba96b67b86e11f969348f4b7b9e1b32d9f059cbd29f833e434c62661",
+  "schema_sha256": "5de6361cf2df2eecc68a24e5b100002f4bb137ac3803768e88fa55bccdab0ec0",
+  "config_sha256": "c1e1c15da6e826406d1bb46f6a7939effb11bfe865bd23c9110e57fd11e0770b",
+  "model": "gemini-3.5-flash",
+  "captured_utc": "2026-09-16T14:36:46.315576+00:00",
+  "usage": {
+    "promptTokenCount": 1372,
+    "candidatesTokenCount": 6559,
+    "totalTokenCount": 7931,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 294
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1078
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "generation_config": {
+    "maxOutputTokens": 32768,
+    "thinkingConfig": {
+      "thinkingLevel": "low"
+    },
+    "responseMimeType": "application/json",
+    "responseJsonSchema": {
+      "type": "object",
+      "properties": {
+        "transcription": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "empty_result_reason": {
+          "type": "string"
+        },
+        "active_hierarchy_at_end": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "institution_path": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "continued": {
+                "type": "boolean"
+              },
+              "raw_entry": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "role",
+              "title",
+              "address",
+              "institution_path",
+              "continued",
+              "raw_entry"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "transcription",
+        "confidence",
+        "empty_result_reason",
+        "active_hierarchy_at_end",
+        "entries"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "raw_response_text": "{\n  \"transcription\": \"Friedhofverwaltung, Städt. Friedhofst. 1\\nF 885\\nFriedhofverwalter: Verwaltungsinsp.\\nHch. Reckert\\nFriedhofaufseher: Jos. Danninger\\nFuhrpark, Städt. Bauhofst. 6 F 842\\nLeitung: Stadtbauamt\\nGewerbeamt, Städt. Rathaus Altstadt 315\\nZi 28 F 875 Leiter: Stadtinsp. Rob.\\nLeikard\\nHeilig-Geist-Spital Altstadt 97 F 2910\\nBesuchszeit: täglich 8-11 u. 14-17\\nUhr\\nJagdberater für den Stadt- u. Landkreis\\n[redacted] Neustadt 467 Stadtamtm.\\na. D. Hch. Karl F 2766\\nKindergärten, Städt. siehe Gruppe I/5\\nKindertagesstätte siehe Gruppe I/5\\nKohlenbeauftragter der Stadt [redacted]\\nRathaus Altstadt 315 Rückgeb.\\nI. Stock Stadtinsp. Andr, Fraunhofer\\nF 823\\nKraftfahrzeugzulassungsstelle Neustadt\\n467 F 879\\nLeiter: Joh. Schweiberger Angest.\\nKrankenanstalten, Städt. siehe Gruppe II\\nGesundheitspflege\\nLiegenschaftsamt Rathaus Altstadt 315\\nNebengeb. II. Stock F 8 27\\nLeiter: Verwaltungsoberinsp. Hans\\nBücherl\\nMagdalenenheim (Städt. Altersheim)\\nChristoph-Dorner-St. 752 F 2216\\nMarktamt Rathaus Zi 29 F 887\\nLeiter: Verwaltungsinsp. Ludwig\\nRomberger\\nMuseum Altstadt 79 F 2681\\nLeiter: Stadtarchivar Theo Herzog\\nPaßstelle siehe Einwohneramt\\nPersonalamt mit Gehalts- und Lohnbe-\\nrechnungsstelle Rathaus Altstadt 315\\nZi 45-47 F 853, 883 Leiter: Stadt-\\namtm. Joh. Metzger F 853\\nPersonalausweisstelle siehe Einwohner-\\namt\\nPreisamt Rathaus Altstadt 315 Zi 29\\nF 887 Leiter: Verwaltungsinsp. Ludw.\\nRomberger\\nRechnungsprüfungsamt, Städt. Rathaus\\nAltstadt 315 Zi 48-50 F 858 Leiter:\\nStadtamtm. Hans Batz\\nRegistratur Rathaus Altstadt 315 Zi 30-\\n31 F 859 Leiter: Verwaltungsoberin-\\nspektor Georg Arndorfer\\nSchlachthof, Städt. Stethaimerst. 29 F 862\\nLeiter: Schlachthofdirektor Dr. Oskar\\nPfetten städt. Veterinärrat und Be-\\nzirkstierarzt\\nSchulen, Städt. siehe Gruppe I Bildung\\nund Erziehung\\nSchwimmschule, Städt. siehe Gruppe II/8\\nStadt- und Kreisbildstelle Altstadt 314\\nF über 867 Leiter: Hauptlehrer Max\\nSchöberl\\nStadtarchiv Altstadt 79 F 2681\\nLeiter: Stadtarchivar Theo Herzog\\nStadtbauamt Bauhofst. 6\\nLeiter: Stadtbaurat Theodor Hoch-\\nrein F 840\\nAbt. Hochbau: Stadtbaumeister Georg\\nLeibrecht F 841\\nAbt. Tiefbau: Bauamtm. Otto\\nSchnickmann F 842\\nVerwaltung: Verwaltungsinsp. Anton\\nGruber F 843\\nStädt. Bauhof: Ludw. Fellermeier\\nPlatzmeister\\nBauaufsicht: Bauoberinsp. Jos\\nSchwaiger F 841\\nStadtgarten Hofgarten 1 F 894 Verwal-\\nter: Stadtgarteninsp. Seb. Graf\\nStadthauptkasse Rathaus Altstadt 315\\nRückgeb. F 824 Leiter: Stadtamtm.\\nLeo Altstötter F 878\\nStellv.: Verwaltungsoberinsp. Max\\nKöppel\\nHauptkassier: Verwaltungsinsp. Karl\\nFreisleben\\nKassenstunden: täglich 8-12 Uhr,\\nSa 8-10.30 Uhr\\nStadtjugendamt Spiegelg. 207 F 856\\nLeiter: Stadtamtm. und Amtsvor-\\nmund Aug. Huber\\nStadtkämmerei und Vermögensbuch-\\nhaltung Rathaus Altstadt 315 Rück-\\ngeb. F 822, 823 Leiter: Kämmerei-\\ndir. Hans Gesinger F 822\\nStellv. und Leiter der Vermögens-\\nbuchhaltung: Verwaltungsoberinsp.\\nJos. Rauscher\\nStadtpolizei Rathaus Altstadt 315 Zim-\\nmer 38 zugleich Feuer-, Unfall- und\\nÜberfallmeldestelle F 80 und 854\\nPolizeichef: Oberamtm. Simon Huber\\nF 898\\nStellv.: Amtmann Gg. Kaiser F 865\\nWhg. 3691\\na) Sicherheitspolizei:\\nPolizeihauptwache Rathaus Zi 1\\nF 80 und 854\\nPolizeirevier Nord Altdorfer St. 6\\nF 2220\\nPolizeirevier Süd Bachst. 1871/2\\nF 3387\\nPolizeirevier Ost Herzog-Georg-\\nPl. 5 F 3500\\nb) Kriminal-Untersuchungsabt. Rat-\\nhaus Altstadt 315 Zi 9 F 855\\nc) Fundbüro Rathaus Altstadt 315\\nZi 4 F 870\\nStadtsteueramt Neustadt 467 F 388\\nLeiter: Stadtamtm. Julius Sklada-\\nnowski\\nStadtsteuerkasse Neustadt 467 F 871\\nLeiter: Stadtamtm Leo Altstötter\\nStellv.: Verwaltungsoberinsp. Max\\nKöppel\\nKassiere: Mart. Wirthmann Ver-\\ntragsangest. Mich. Reidel Verlrags-\\nangest.\\nKassastunden: tägl. 8-12 Uhr, Sa\\n[redacted]\\nLandtorpl. 2-5\\nStadtwaage Viehmarktpl.\\nLorenz Ebenbeck Waagemeister\\nStädtische Werke\\nBischof-Sailer-Platz 431/432 Leitung\\nder Städt. Werke: Baurat Hugo\\nFritzel F 830\\nAbtlg. Elektrizitätswerk\\nWerkleitung: Oberingenieur Hugo\\nZimmerer F 838 Störungsstelle bei\\nTag F 837, bei Nacht F 844\\nAbtlg. Gas- und Wasserwerk\\nWerkleitung: Oberingenieur Walter\\nStreb F 833 u. 848 Störungsstelle\\nGas und Wasser bei Tag F 825, bei\\nNacht F 848\\nAbtlg. Verkehrsbetriebe\\nWerkleitung: Dipl.-Ing. Joseph Hirt-\\nhammer F 832\\nAbtlg. Kaufmännische Verwaltung\\nLeitung: Verw.-Oberinsp. Philipp\\nZölch F 896\\nStandesamt Rathaus Altstadt 315\\nZi 42-44 F 857 Standesbeamter: Ver-\\nwaltungsoberinspektor Jos. Falter\\nEheschließungen jeweils Mittwoch\\nund Samstag Vormittag\\nStatistisches Amt Altstadt 79 F 2681\\nLeiter: Stadtarchivar Theo Herzog\\nStiftungsverwaltung Rathaus Altstadt\\n315 Rückgeb. F 882 Leiter: Hch. Gill-\\nmeier Vertragsang.\\nÜberfall-Kommando Rathaus Altstadt\\n315 Polizeihauptwache Zimmer 1\\nF 80, 854\\nVermittlungsamt, Städt. (Sühneamt)\\nNeustadt 467 F 851 Leiter: Verwal-\\ntungsoberinsp. Jos. de Temple\",\n  \"confidence\": 0.98,\n  \"empty_result_reason\": \"\",\n  \"active_hierarchy_at_end\": [\n    \"Vermittlungsamt, Städt. (Sühneamt)\"\n  ],\n  \"entries\": [\n    {\n      \"name\": \"Hch. Reckert\",\n      \"role\": \"Friedhofverwalter\",\n      \"title\": \"Verwaltungsinsp.\",\n      \"address\": \"Friedhofst. 1\",\n      \"institution_path\": [\"Friedhofverwaltung\"],\n      \"continued\": false,\n      \"raw_entry\": \"Friedhofverwalter: Verwaltungsinsp. Hch. Reckert\"\n    },\n    {\n      \"name\": \"Jos. Danninger\",\n      \"role\": \"Friedhofaufseher\",\n      \"title\": \"\",\n      \"address\": \"Friedhofst. 1\",\n      \"institution_path\": [\"Friedhofverwaltung\"],\n      \"continued\": false,\n      \"raw_entry\": \"Friedhofaufseher: Jos. Danninger\"\n    },\n    {\n      \"name\": \"Rob. Leikard\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtinsp.\",\n      \"address\": \"Rathaus Altstadt 315 Zi 28\",\n      \"institution_path\": [\"Gewerbeamt, Städt.\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtinsp. Rob. Leikard\"\n    },\n    {\n      \"name\": \"Hch. Karl\",\n      \"role\": \"Jagdberater für den Stadt- u. Landkreis [redacted]\",\n      \"title\": \"Stadtamtm. a. D.\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\"Jagdberater für den Stadt- u. Landkreis [redacted]\"],\n      \"continued\": false,\n      \"raw_entry\": \"Stadtamtm. a. D. Hch. Karl\"\n    },\n    {\n      \"name\": \"Andr, Fraunhofer\",\n      \"role\": \"\",\n      \"title\": \"Stadtinsp.\",\n      \"address\": \"Rathaus Altstadt 315 Rückgeb. I. Stock\",\n      \"institution_path\": [\"Kohlenbeauftragter der Stadt [redacted]\"],\n      \"continued\": false,\n      \"raw_entry\": \"I. Stock Stadtinsp. Andr, Fraunhofer\"\n    },\n    {\n      \"name\": \"Joh. Schweiberger\",\n      \"role\": \"Leiter\",\n      \"title\": \"Angest.\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\"Kraftfahrzeugzulassungsstelle\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Joh. Schweiberger Angest.\"\n    },\n    {\n      \"name\": \"Hans Bücherl\",\n      \"role\": \"Leiter\",\n      \"title\": \"Verwaltungsoberinsp.\",\n      \"address\": \"Rathaus Altstadt 315 Nebengeb. II. Stock\",\n      \"institution_path\": [\"Liegenschaftsamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Verwaltungsoberinsp. Hans Bücherl\"\n    },\n    {\n      \"name\": \"Ludwig Romberger\",\n      \"role\": \"Leiter\",\n      \"title\": \"Verwaltungsinsp.\",\n      \"address\": \"Rathaus Zi 29\",\n      \"institution_path\": [\"Marktamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Verwaltungsinsp. Ludwig Romberger\"\n    },\n    {\n      \"name\": \"Theo Herzog\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtarchivar\",\n      \"address\": \"Altstadt 79\",\n      \"institution_path\": [\"Museum\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtarchivar Theo Herzog\"\n    },\n    {\n      \"name\": \"Joh. Metzger\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtamtm.\",\n      \"address\": \"Rathaus Altstadt 315 Zi 45-47\",\n      \"institution_path\": [\"Personalamt mit Gehalts- und Lohnberechnungsstelle\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtamtm. Joh. Metzger\"\n    },\n    {\n      \"name\": \"Ludw. Romberger\",\n      \"role\": \"Leiter\",\n      \"title\": \"Verwaltungsinsp.\",\n      \"address\": \"Rathaus Altstadt 315 Zi 29\",\n      \"institution_path\": [\"Preisamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Verwaltungsinsp. Ludw. Romberger\"\n    },\n    {\n      \"name\": \"Hans Batz\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtamtm.\",\n      \"address\": \"Rathaus Altstadt 315 Zi 48-50\",\n      \"institution_path\": [\"Rechnungsprüfungsamt, Städt.\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtamtm. Hans Batz\"\n    },\n    {\n      \"name\": \"Georg Arndorfer\",\n      \"role\": \"Leiter\",\n      \"title\": \"Verwaltungsoberinspektor\",\n      \"address\": \"Rathaus Altstadt 315 Zi 30-31\",\n      \"institution_path\": [\"Registratur\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Verwaltungsoberinspektor Georg Arndorfer\"\n    },\n    {\n      \"name\": \"Dr. Oskar Pfetten\",\n      \"role\": \"Leiter\",\n      \"title\": \"Schlachthofdirektor, städt. Veterinärrat und Bezirkstierarzt\",\n      \"address\": \"Stethaimerst. 29\",\n      \"institution_path\": [\"Schlachthof, Städt.\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Schlachthofdirektor Dr. Oskar Pfetten städt. Veterinärrat und Bezirkstierarzt\"\n    },\n    {\n      \"name\": \"Max Schöberl\",\n      \"role\": \"Leiter\",\n      \"title\": \"Hauptlehrer\",\n      \"address\": \"Altstadt 314\",\n      \"institution_path\": [\"Stadt- und Kreisbildstelle\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Hauptlehrer Max Schöberl\"\n    },\n    {\n      \"name\": \"Theo Herzog\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtarchivar\",\n      \"address\": \"Altstadt 79\",\n      \"institution_path\": [\"Stadtarchiv\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtarchivar Theo Herzog\"\n    },\n    {\n      \"name\": \"Theodor Hochrein\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtbaurat\",\n      \"address\": \"Bauhofst. 6\",\n      \"institution_path\": [\"Stadtbauamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtbaurat Theodor Hochrein\"\n    },\n    {\n      \"name\": \"Georg Leibrecht\",\n      \"role\": \"Abt. Hochbau\",\n      \"title\": \"Stadtbaumeister\",\n      \"address\": \"Bauhofst. 6\",\n      \"institution_path\": [\"Stadtbauamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Abt. Hochbau: Stadtbaumeister Georg Leibrecht\"\n    },\n    {\n      \"name\": \"Otto Schnickmann\",\n      \"role\": \"Abt. Tiefbau\",\n      \"title\": \"Bauamtm.\",\n      \"address\": \"Bauhofst. 6\",\n      \"institution_path\": [\"Stadtbauamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Abt. Tiefbau: Bauamtm. Otto Schnickmann\"\n    },\n    {\n      \"name\": \"Anton Gruber\",\n      \"role\": \"Verwaltung\",\n      \"title\": \"Verwaltungsinsp.\",\n      \"address\": \"Bauhofst. 6\",\n      \"institution_path\": [\"Stadtbauamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Verwaltung: Verwaltungsinsp. Anton Gruber\"\n    },\n    {\n      \"name\": \"Ludw. Fellermeier\",\n      \"role\": \"Platzmeister\",\n      \"title\": \"\",\n      \"address\": \"Städt. Bauhof [Bauhofst. 6]\",\n      \"institution_path\": [\"Stadtbauamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Städt. Bauhof: Ludw. Fellermeier Platzmeister\"\n    },\n    {\n      \"name\": \"Jos Schwaiger\",\n      \"role\": \"Bauaufsicht\",\n      \"title\": \"Bauoberinsp.\",\n      \"address\": \"Bauhofst. 6\",\n      \"institution_path\": [\"Stadtbauamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Bauaufsicht: Bauoberinsp. Jos Schwaiger\"\n    },\n    {\n      \"name\": \"Seb. Graf\",\n      \"role\": \"Verwalter\",\n      \"title\": \"Stadtgarteninsp.\",\n      \"address\": \"Hofgarten 1\",\n      \"institution_path\": [\"Stadtgarten\"],\n      \"continued\": false,\n      \"raw_entry\": \"Verwalter: Stadtgarteninsp. Seb. Graf\"\n    },\n    {\n      \"name\": \"Leo Altstötter\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtamtm.\",\n      \"address\": \"Rathaus Altstadt 315 Rückgeb.\",\n      \"institution_path\": [\"Stadthauptkasse\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtamtm. Leo Altstötter\"\n    },\n    {\n      \"name\": \"Max Köppel\",\n      \"role\": \"Stellv.\",\n      \"title\": \"Verwaltungsoberinsp.\",\n      \"address\": \"Rathaus Altstadt 315 Rückgeb.\",\n      \"institution_path\": [\"Stadthauptkasse\"],\n      \"continued\": false,\n      \"raw_entry\": \"Stellv.: Verwaltungsoberinsp. Max Köppel\"\n    },\n    {\n      \"name\": \"Karl Freisleben\",\n      \"role\": \"Hauptkassier\",\n      \"title\": \"Verwaltungsinsp.\",\n      \"address\": \"Rathaus Altstadt 315 Rückgeb.\",\n      \"institution_path\": [\"Stadthauptkasse\"],\n      \"continued\": false,\n      \"raw_entry\": \"Hauptkassier: Verwaltungsinsp. Karl Freisleben\"\n    },\n    {\n      \"name\": \"Aug. Huber\",\n      \"role\": \"Leiter und Amtsvormund\",\n      \"title\": \"Stadtamtm.\",\n      \"address\": \"Spiegelg. 207\",\n      \"institution_path\": [\"Stadtjugendamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtamtm. und Amtsvormund Aug. Huber\"\n    },\n    {\n      \"name\": \"Hans Gesinger\",\n      \"role\": \"Leiter\",\n      \"title\": \"Kämmereidir.\",\n      \"address\": \"Rathaus Altstadt 315 Rückgeb.\",\n      \"institution_path\": [\"Stadtkämmerei und Vermögensbuchhaltung\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Kämmereidir. Hans Gesinger\"\n    },\n    {\n      \"name\": \"Jos. Rauscher\",\n      \"role\": \"Stellv. und Leiter der Vermögensbuchhaltung\",\n      \"title\": \"Verwaltungsoberinsp.\",\n      \"address\": \"Rathaus Altstadt 315 Rückgeb.\",\n      \"institution_path\": [\"Stadtkämmerei und Vermögensbuchhaltung\"],\n      \"continued\": false,\n      \"raw_entry\": \"Stellv. und Leiter der Vermögensbuchhaltung: Verwaltungsoberinsp. Jos. Rauscher\"\n    },\n    {\n      \"name\": \"Simon Huber\",\n      \"role\": \"Polizeichef\",\n      \"title\": \"Oberamtm.\",\n      \"address\": \"Rathaus Altstadt 315 Zimmer 38\",\n      \"institution_path\": [\"Stadtpolizei\"],\n      \"continued\": false,\n      \"raw_entry\": \"Polizeichef: Oberamtm. Simon Huber\"\n    },\n    {\n      \"name\": \"Gg. Kaiser\",\n      \"role\": \"Stellv.\",\n      \"title\": \"Amtmann\",\n      \"address\": \"Rathaus Altstadt 315 Zimmer 38\",\n      \"institution_path\": [\"Stadtpolizei\"],\n      \"continued\": false,\n      \"raw_entry\": \"Stellv.: Amtmann Gg. Kaiser\"\n    },\n    {\n      \"name\": \"Julius Skladanowski\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtamtm.\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\"Stadtsteueramt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtamtm. Julius Skladanowski\"\n    },\n    {\n      \"name\": \"Leo Altstötter\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtamtm\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\"Stadtsteuerkasse\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtamtm Leo Altstötter\"\n    },\n    {\n      \"name\": \"Max Köppel\",\n      \"role\": \"Stellv.\",\n      \"title\": \"Verwaltungsoberinsp.\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\"Stadtsteuerkasse\"],\n      \"continued\": false,\n      \"raw_entry\": \"Stellv.: Verwaltungsoberinsp. Max Köppel\"\n    },\n    {\n      \"name\": \"Mart. Wirthmann\",\n      \"role\": \"Kassiere\",\n      \"title\": \"Vertragsangest.\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\"Stadtsteuerkasse\"],\n      \"continued\": false,\n      \"raw_entry\": \"Kassiere: Mart. Wirthmann Vertragsangest.\"\n    },\n    {\n      \"name\": \"Mich. Reidel\",\n      \"role\": \"Kassiere\",\n      \"title\": \"Vertragsangest.\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\"Stadtsteuerkasse\"],\n      \"continued\": false,\n      \"raw_entry\": \"Mich. Reidel Vertragsangest.\"\n    },\n    {\n      \"name\": \"Lorenz Ebenbeck\",\n      \"role\": \"Waagemeister\",\n      \"title\": \"\",\n      \"address\": \"Viehmarktpl.\",\n      \"institution_path\": [\"Stadtwaage\"],\n      \"continued\": false,\n      \"raw_entry\": \"Lorenz Ebenbeck Waagemeister\"\n    },\n    {\n      \"name\": \"Hugo Fritzel\",\n      \"role\": \"Leitung der Städt. Werke\",\n      \"title\": \"Baurat\",\n      \"address\": \"Bischof-Sailer-Platz 431/432\",\n      \"institution_path\": [\"Städtische Werke\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leitung der Städt. Werke: Baurat Hugo Fritzel\"\n    },\n    {\n      \"name\": \"Hugo Zimmerer\",\n      \"role\": \"Werkleitung\",\n      \"title\": \"Oberingenieur\",\n      \"address\": \"Bischof-Sailer-Platz 431/432\",\n      \"institution_path\": [\"Städtische Werke\", \"Abtlg. Elektrizitätswerk\"],\n      \"continued\": false,\n      \"raw_entry\": \"Werkleitung: Oberingenieur Hugo Zimmerer\"\n    },\n    {\n      \"name\": \"Walter Streb\",\n      \"role\": \"Werkleitung\",\n      \"title\": \"Oberingenieur\",\n      \"address\": \"Bischof-Sailer-Platz 431/432\",\n      \"institution_path\": [\"Städtische Werke\", \"Abtlg. Gas- und Wasserwerk\"],\n      \"continued\": false,\n      \"raw_entry\": \"Werkleitung: Oberingenieur Walter Streb\"\n    },\n    {\n      \"name\": \"Joseph Hirthammer\",\n      \"role\": \"Werkleitung\",\n      \"title\": \"Dipl.-Ing.\",\n      \"address\": \"Bischof-Sailer-Platz 431/432\",\n      \"institution_path\": [\"Städtische Werke\", \"Abtlg. Verkehrsbetriebe\"],\n      \"continued\": false,\n      \"raw_entry\": \"Werkleitung: Dipl.-Ing. Joseph Hirthammer\"\n    },\n    {\n      \"name\": \"Philipp Zölch\",\n      \"role\": \"Leitung\",\n      \"title\": \"Verw.-Oberinsp.\",\n      \"address\": \"Bischof-Sailer-Platz 431/432\",\n      \"institution_path\": [\"Städtische Werke\", \"Abtlg. Kaufmännische Verwaltung\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leitung: Verw.-Oberinsp. Philipp Zölch\"\n    },\n    {\n      \"name\": \"Jos. Falter\",\n      \"role\": \"Standesbeamter\",\n      \"title\": \"Verwaltungsoberinspektor\",\n      \"address\": \"Rathaus Altstadt 315 Zi 42-44\",\n      \"institution_path\": [\"Standesamt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Standesbeamter: Verwaltungsoberinspektor Jos. Falter\"\n    },\n    {\n      \"name\": \"Theo Herzog\",\n      \"role\": \"Leiter\",\n      \"title\": \"Stadtarchivar\",\n      \"address\": \"Altstadt 79\",\n      \"institution_path\": [\"Statistisches Amt\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Stadtarchivar Theo Herzog\"\n    },\n    {\n      \"name\": \"Hch. Gillmeier\",\n      \"role\": \"Leiter\",\n      \"title\": \"Vertragsang.\",\n      \"address\": \"Rathaus Altstadt 315 Rückgeb.\",\n      \"institution_path\": [\"Stiftungsverwaltung\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Hch. Gillmeier Vertragsang.\"\n    },\n    {\n      \"name\": \"Jos. de Temple\",\n      \"role\": \"Leiter\",\n      \"title\": \"Verwaltungsoberinsp.\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\"Vermittlungsamt, Städt. (Sühneamt)\"],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Verwaltungsoberinsp. Jos. de Temple\"\n    }\n  ]\n}",
+  "page": {
+    "transcription": "Friedhofverwaltung, Städt. Friedhofst. 1\nF 885\nFriedhofverwalter: Verwaltungsinsp.\nHch. Reckert\nFriedhofaufseher: Jos. Danninger\nFuhrpark, Städt. Bauhofst. 6 F 842\nLeitung: Stadtbauamt\nGewerbeamt, Städt. Rathaus Altstadt 315\nZi 28 F 875 Leiter: Stadtinsp. Rob.\nLeikard\nHeilig-Geist-Spital Altstadt 97 F 2910\nBesuchszeit: täglich 8-11 u. 14-17\nUhr\nJagdberater für den Stadt- u. Landkreis\n[redacted] Neustadt 467 Stadtamtm.\na. D. Hch. Karl F 2766\nKindergärten, Städt. siehe Gruppe I/5\nKindertagesstätte siehe Gruppe I/5\nKohlenbeauftragter der Stadt [redacted]\nRathaus Altstadt 315 Rückgeb.\nI. Stock Stadtinsp. Andr, Fraunhofer\nF 823\nKraftfahrzeugzulassungsstelle Neustadt\n467 F 879\nLeiter: Joh. Schweiberger Angest.\nKrankenanstalten, Städt. siehe Gruppe II\nGesundheitspflege\nLiegenschaftsamt Rathaus Altstadt 315\nNebengeb. II. Stock F 8 27\nLeiter: Verwaltungsoberinsp. Hans\nBücherl\nMagdalenenheim (Städt. Altersheim)\nChristoph-Dorner-St. 752 F 2216\nMarktamt Rathaus Zi 29 F 887\nLeiter: Verwaltungsinsp. Ludwig\nRomberger\nMuseum Altstadt 79 F 2681\nLeiter: Stadtarchivar Theo Herzog\nPaßstelle siehe Einwohneramt\nPersonalamt mit Gehalts- und Lohnbe-\nrechnungsstelle Rathaus Altstadt 315\nZi 45-47 F 853, 883 Leiter: Stadt-\namtm. Joh. Metzger F 853\nPersonalausweisstelle siehe Einwohner-\namt\nPreisamt Rathaus Altstadt 315 Zi 29\nF 887 Leiter: Verwaltungsinsp. Ludw.\nRomberger\nRechnungsprüfungsamt, Städt. Rathaus\nAltstadt 315 Zi 48-50 F 858 Leiter:\nStadtamtm. Hans Batz\nRegistratur Rathaus Altstadt 315 Zi 30-\n31 F 859 Leiter: Verwaltungsoberin-\nspektor Georg Arndorfer\nSchlachthof, Städt. Stethaimerst. 29 F 862\nLeiter: Schlachthofdirektor Dr. Oskar\nPfetten städt. Veterinärrat und Be-\nzirkstierarzt\nSchulen, Städt. siehe Gruppe I Bildung\nund Erziehung\nSchwimmschule, Städt. siehe Gruppe II/8\nStadt- und Kreisbildstelle Altstadt 314\nF über 867 Leiter: Hauptlehrer Max\nSchöberl\nStadtarchiv Altstadt 79 F 2681\nLeiter: Stadtarchivar Theo Herzog\nStadtbauamt Bauhofst. 6\nLeiter: Stadtbaurat Theodor Hoch-\nrein F 840\nAbt. Hochbau: Stadtbaumeister Georg\nLeibrecht F 841\nAbt. Tiefbau: Bauamtm. Otto\nSchnickmann F 842\nVerwaltung: Verwaltungsinsp. Anton\nGruber F 843\nStädt. Bauhof: Ludw. Fellermeier\nPlatzmeister\nBauaufsicht: Bauoberinsp. Jos\nSchwaiger F 841\nStadtgarten Hofgarten 1 F 894 Verwal-\nter: Stadtgarteninsp. Seb. Graf\nStadthauptkasse Rathaus Altstadt 315\nRückgeb. F 824 Leiter: Stadtamtm.\nLeo Altstötter F 878\nStellv.: Verwaltungsoberinsp. Max\nKöppel\nHauptkassier: Verwaltungsinsp. Karl\nFreisleben\nKassenstunden: täglich 8-12 Uhr,\nSa 8-10.30 Uhr\nStadtjugendamt Spiegelg. 207 F 856\nLeiter: Stadtamtm. und Amtsvor-\nmund Aug. Huber\nStadtkämmerei und Vermögensbuch-\nhaltung Rathaus Altstadt 315 Rück-\ngeb. F 822, 823 Leiter: Kämmerei-\ndir. Hans Gesinger F 822\nStellv. und Leiter der Vermögens-\nbuchhaltung: Verwaltungsoberinsp.\nJos. Rauscher\nStadtpolizei Rathaus Altstadt 315 Zim-\nmer 38 zugleich Feuer-, Unfall- und\nÜberfallmeldestelle F 80 und 854\nPolizeichef: Oberamtm. Simon Huber\nF 898\nStellv.: Amtmann Gg. Kaiser F 865\nWhg. 3691\na) Sicherheitspolizei:\nPolizeihauptwache Rathaus Zi 1\nF 80 und 854\nPolizeirevier Nord Altdorfer St. 6\nF 2220\nPolizeirevier Süd Bachst. 1871/2\nF 3387\nPolizeirevier Ost Herzog-Georg-\nPl. 5 F 3500\nb) Kriminal-Untersuchungsabt. Rat-\nhaus Altstadt 315 Zi 9 F 855\nc) Fundbüro Rathaus Altstadt 315\nZi 4 F 870\nStadtsteueramt Neustadt 467 F 388\nLeiter: Stadtamtm. Julius Sklada-\nnowski\nStadtsteuerkasse Neustadt 467 F 871\nLeiter: Stadtamtm Leo Altstötter\nStellv.: Verwaltungsoberinsp. Max\nKöppel\nKassiere: Mart. Wirthmann Ver-\ntragsangest. Mich. Reidel Verlrags-\nangest.\nKassastunden: tägl. 8-12 Uhr, Sa\n[redacted]\nLandtorpl. 2-5\nStadtwaage Viehmarktpl.\nLorenz Ebenbeck Waagemeister\nStädtische Werke\nBischof-Sailer-Platz 431/432 Leitung\nder Städt. Werke: Baurat Hugo\nFritzel F 830\nAbtlg. Elektrizitätswerk\nWerkleitung: Oberingenieur Hugo\nZimmerer F 838 Störungsstelle bei\nTag F 837, bei Nacht F 844\nAbtlg. Gas- und Wasserwerk\nWerkleitung: Oberingenieur Walter\nStreb F 833 u. 848 Störungsstelle\nGas und Wasser bei Tag F 825, bei\nNacht F 848\nAbtlg. Verkehrsbetriebe\nWerkleitung: Dipl.-Ing. Joseph Hirt-\nhammer F 832\nAbtlg. Kaufmännische Verwaltung\nLeitung: Verw.-Oberinsp. Philipp\nZölch F 896\nStandesamt Rathaus Altstadt 315\nZi 42-44 F 857 Standesbeamter: Ver-\nwaltungsoberinspektor Jos. Falter\nEheschließungen jeweils Mittwoch\nund Samstag Vormittag\nStatistisches Amt Altstadt 79 F 2681\nLeiter: Stadtarchivar Theo Herzog\nStiftungsverwaltung Rathaus Altstadt\n315 Rückgeb. F 882 Leiter: Hch. Gill-\nmeier Vertragsang.\nÜberfall-Kommando Rathaus Altstadt\n315 Polizeihauptwache Zimmer 1\nF 80, 854\nVermittlungsamt, Städt. (Sühneamt)\nNeustadt 467 F 851 Leiter: Verwal-\ntungsoberinsp. Jos. de Temple",
+    "confidence": 0.98,
+    "empty_result_reason": "",
+    "active_hierarchy_at_end": [
+      "Vermittlungsamt, Städt. (Sühneamt)"
+    ],
+    "entries": [
+      {
+        "name": "Hch. Reckert",
+        "role": "Friedhofverwalter",
+        "title": "Verwaltungsinsp.",
+        "address": "Friedhofst. 1",
+        "institution_path": [
+          "Friedhofverwaltung"
+        ],
+        "continued": false,
+        "raw_entry": "Friedhofverwalter: Verwaltungsinsp. Hch. Reckert"
+      },
+      {
+        "name": "Jos. Danninger",
+        "role": "Friedhofaufseher",
+        "title": "",
+        "address": "Friedhofst. 1",
+        "institution_path": [
+          "Friedhofverwaltung"
+        ],
+        "continued": false,
+        "raw_entry": "Friedhofaufseher: Jos. Danninger"
+      },
+      {
+        "name": "Rob. Leikard",
+        "role": "Leiter",
+        "title": "Stadtinsp.",
+        "address": "Rathaus Altstadt 315 Zi 28",
+        "institution_path": [
+          "Gewerbeamt, Städt."
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtinsp. Rob. Leikard"
+      },
+      {
+        "name": "Hch. Karl",
+        "role": "Jagdberater für den Stadt- u. Landkreis [redacted]",
+        "title": "Stadtamtm. a. D.",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Jagdberater für den Stadt- u. Landkreis [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Stadtamtm. a. D. Hch. Karl"
+      },
+      {
+        "name": "Andr, Fraunhofer",
+        "role": "",
+        "title": "Stadtinsp.",
+        "address": "Rathaus Altstadt 315 Rückgeb. I. Stock",
+        "institution_path": [
+          "Kohlenbeauftragter der Stadt [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "I. Stock Stadtinsp. Andr, Fraunhofer"
+      },
+      {
+        "name": "Joh. Schweiberger",
+        "role": "Leiter",
+        "title": "Angest.",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Kraftfahrzeugzulassungsstelle"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Joh. Schweiberger Angest."
+      },
+      {
+        "name": "Hans Bücherl",
+        "role": "Leiter",
+        "title": "Verwaltungsoberinsp.",
+        "address": "Rathaus Altstadt 315 Nebengeb. II. Stock",
+        "institution_path": [
+          "Liegenschaftsamt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Verwaltungsoberinsp. Hans Bücherl"
+      },
+      {
+        "name": "Ludwig Romberger",
+        "role": "Leiter",
+        "title": "Verwaltungsinsp.",
+        "address": "Rathaus Zi 29",
+        "institution_path": [
+          "Marktamt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Verwaltungsinsp. Ludwig Romberger"
+      },
+      {
+        "name": "Theo Herzog",
+        "role": "Leiter",
+        "title": "Stadtarchivar",
+        "address": "Altstadt 79",
+        "institution_path": [
+          "Museum"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtarchivar Theo Herzog"
+      },
+      {
+        "name": "Joh. Metzger",
+        "role": "Leiter",
+        "title": "Stadtamtm.",
+        "address": "Rathaus Altstadt 315 Zi 45-47",
+        "institution_path": [
+          "Personalamt mit Gehalts- und Lohnberechnungsstelle"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtamtm. Joh. Metzger"
+      },
+      {
+        "name": "Ludw. Romberger",
+        "role": "Leiter",
+        "title": "Verwaltungsinsp.",
+        "address": "Rathaus Altstadt 315 Zi 29",
+        "institution_path": [
+          "Preisamt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Verwaltungsinsp. Ludw. Romberger"
+      },
+      {
+        "name": "Hans Batz",
+        "role": "Leiter",
+        "title": "Stadtamtm.",
+        "address": "Rathaus Altstadt 315 Zi 48-50",
+        "institution_path": [
+          "Rechnungsprüfungsamt, Städt."
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtamtm. Hans Batz"
+      },
+      {
+        "name": "Georg Arndorfer",
+        "role": "Leiter",
+        "title": "Verwaltungsoberinspektor",
+        "address": "Rathaus Altstadt 315 Zi 30-31",
+        "institution_path": [
+          "Registratur"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Verwaltungsoberinspektor Georg Arndorfer"
+      },
+      {
+        "name": "Dr. Oskar Pfetten",
+        "role": "Leiter",
+        "title": "Schlachthofdirektor, städt. Veterinärrat und Bezirkstierarzt",
+        "address": "Stethaimerst. 29",
+        "institution_path": [
+          "Schlachthof, Städt."
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Schlachthofdirektor Dr. Oskar Pfetten städt. Veterinärrat und Bezirkstierarzt"
+      },
+      {
+        "name": "Max Schöberl",
+        "role": "Leiter",
+        "title": "Hauptlehrer",
+        "address": "Altstadt 314",
+        "institution_path": [
+          "Stadt- und Kreisbildstelle"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Hauptlehrer Max Schöberl"
+      },
+      {
+        "name": "Theo Herzog",
+        "role": "Leiter",
+        "title": "Stadtarchivar",
+        "address": "Altstadt 79",
+        "institution_path": [
+          "Stadtarchiv"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtarchivar Theo Herzog"
+      },
+      {
+        "name": "Theodor Hochrein",
+        "role": "Leiter",
+        "title": "Stadtbaurat",
+        "address": "Bauhofst. 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtbaurat Theodor Hochrein"
+      },
+      {
+        "name": "Georg Leibrecht",
+        "role": "Abt. Hochbau",
+        "title": "Stadtbaumeister",
+        "address": "Bauhofst. 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Abt. Hochbau: Stadtbaumeister Georg Leibrecht"
+      },
+      {
+        "name": "Otto Schnickmann",
+        "role": "Abt. Tiefbau",
+        "title": "Bauamtm.",
+        "address": "Bauhofst. 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Abt. Tiefbau: Bauamtm. Otto Schnickmann"
+      },
+      {
+        "name": "Anton Gruber",
+        "role": "Verwaltung",
+        "title": "Verwaltungsinsp.",
+        "address": "Bauhofst. 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Verwaltung: Verwaltungsinsp. Anton Gruber"
+      },
+      {
+        "name": "Ludw. Fellermeier",
+        "role": "Platzmeister",
+        "title": "",
+        "address": "Städt. Bauhof [Bauhofst. 6]",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Städt. Bauhof: Ludw. Fellermeier Platzmeister"
+      },
+      {
+        "name": "Jos Schwaiger",
+        "role": "Bauaufsicht",
+        "title": "Bauoberinsp.",
+        "address": "Bauhofst. 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Bauaufsicht: Bauoberinsp. Jos Schwaiger"
+      },
+      {
+        "name": "Seb. Graf",
+        "role": "Verwalter",
+        "title": "Stadtgarteninsp.",
+        "address": "Hofgarten 1",
+        "institution_path": [
+          "Stadtgarten"
+        ],
+        "continued": false,
+        "raw_entry": "Verwalter: Stadtgarteninsp. Seb. Graf"
+      },
+      {
+        "name": "Leo Altstötter",
+        "role": "Leiter",
+        "title": "Stadtamtm.",
+        "address": "Rathaus Altstadt 315 Rückgeb.",
+        "institution_path": [
+          "Stadthauptkasse"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtamtm. Leo Altstötter"
+      },
+      {
+        "name": "Max Köppel",
+        "role": "Stellv.",
+        "title": "Verwaltungsoberinsp.",
+        "address": "Rathaus Altstadt 315 Rückgeb.",
+        "institution_path": [
+          "Stadthauptkasse"
+        ],
+        "continued": false,
+        "raw_entry": "Stellv.: Verwaltungsoberinsp. Max Köppel"
+      },
+      {
+        "name": "Karl Freisleben",
+        "role": "Hauptkassier",
+        "title": "Verwaltungsinsp.",
+        "address": "Rathaus Altstadt 315 Rückgeb.",
+        "institution_path": [
+          "Stadthauptkasse"
+        ],
+        "continued": false,
+        "raw_entry": "Hauptkassier: Verwaltungsinsp. Karl Freisleben"
+      },
+      {
+        "name": "Aug. Huber",
+        "role": "Leiter und Amtsvormund",
+        "title": "Stadtamtm.",
+        "address": "Spiegelg. 207",
+        "institution_path": [
+          "Stadtjugendamt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtamtm. und Amtsvormund Aug. Huber"
+      },
+      {
+        "name": "Hans Gesinger",
+        "role": "Leiter",
+        "title": "Kämmereidir.",
+        "address": "Rathaus Altstadt 315 Rückgeb.",
+        "institution_path": [
+          "Stadtkämmerei und Vermögensbuchhaltung"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Kämmereidir. Hans Gesinger"
+      },
+      {
+        "name": "Jos. Rauscher",
+        "role": "Stellv. und Leiter der Vermögensbuchhaltung",
+        "title": "Verwaltungsoberinsp.",
+        "address": "Rathaus Altstadt 315 Rückgeb.",
+        "institution_path": [
+          "Stadtkämmerei und Vermögensbuchhaltung"
+        ],
+        "continued": false,
+        "raw_entry": "Stellv. und Leiter der Vermögensbuchhaltung: Verwaltungsoberinsp. Jos. Rauscher"
+      },
+      {
+        "name": "Simon Huber",
+        "role": "Polizeichef",
+        "title": "Oberamtm.",
+        "address": "Rathaus Altstadt 315 Zimmer 38",
+        "institution_path": [
+          "Stadtpolizei"
+        ],
+        "continued": false,
+        "raw_entry": "Polizeichef: Oberamtm. Simon Huber"
+      },
+      {
+        "name": "Gg. Kaiser",
+        "role": "Stellv.",
+        "title": "Amtmann",
+        "address": "Rathaus Altstadt 315 Zimmer 38",
+        "institution_path": [
+          "Stadtpolizei"
+        ],
+        "continued": false,
+        "raw_entry": "Stellv.: Amtmann Gg. Kaiser"
+      },
+      {
+        "name": "Julius Skladanowski",
+        "role": "Leiter",
+        "title": "Stadtamtm.",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Stadtsteueramt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtamtm. Julius Skladanowski"
+      },
+      {
+        "name": "Leo Altstötter",
+        "role": "Leiter",
+        "title": "Stadtamtm",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Stadtsteuerkasse"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtamtm Leo Altstötter"
+      },
+      {
+        "name": "Max Köppel",
+        "role": "Stellv.",
+        "title": "Verwaltungsoberinsp.",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Stadtsteuerkasse"
+        ],
+        "continued": false,
+        "raw_entry": "Stellv.: Verwaltungsoberinsp. Max Köppel"
+      },
+      {
+        "name": "Mart. Wirthmann",
+        "role": "Kassiere",
+        "title": "Vertragsangest.",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Stadtsteuerkasse"
+        ],
+        "continued": false,
+        "raw_entry": "Kassiere: Mart. Wirthmann Vertragsangest."
+      },
+      {
+        "name": "Mich. Reidel",
+        "role": "Kassiere",
+        "title": "Vertragsangest.",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Stadtsteuerkasse"
+        ],
+        "continued": false,
+        "raw_entry": "Mich. Reidel Vertragsangest."
+      },
+      {
+        "name": "Lorenz Ebenbeck",
+        "role": "Waagemeister",
+        "title": "",
+        "address": "Viehmarktpl.",
+        "institution_path": [
+          "Stadtwaage"
+        ],
+        "continued": false,
+        "raw_entry": "Lorenz Ebenbeck Waagemeister"
+      },
+      {
+        "name": "Hugo Fritzel",
+        "role": "Leitung der Städt. Werke",
+        "title": "Baurat",
+        "address": "Bischof-Sailer-Platz 431/432",
+        "institution_path": [
+          "Städtische Werke"
+        ],
+        "continued": false,
+        "raw_entry": "Leitung der Städt. Werke: Baurat Hugo Fritzel"
+      },
+      {
+        "name": "Hugo Zimmerer",
+        "role": "Werkleitung",
+        "title": "Oberingenieur",
+        "address": "Bischof-Sailer-Platz 431/432",
+        "institution_path": [
+          "Städtische Werke",
+          "Abtlg. Elektrizitätswerk"
+        ],
+        "continued": false,
+        "raw_entry": "Werkleitung: Oberingenieur Hugo Zimmerer"
+      },
+      {
+        "name": "Walter Streb",
+        "role": "Werkleitung",
+        "title": "Oberingenieur",
+        "address": "Bischof-Sailer-Platz 431/432",
+        "institution_path": [
+          "Städtische Werke",
+          "Abtlg. Gas- und Wasserwerk"
+        ],
+        "continued": false,
+        "raw_entry": "Werkleitung: Oberingenieur Walter Streb"
+      },
+      {
+        "name": "Joseph Hirthammer",
+        "role": "Werkleitung",
+        "title": "Dipl.-Ing.",
+        "address": "Bischof-Sailer-Platz 431/432",
+        "institution_path": [
+          "Städtische Werke",
+          "Abtlg. Verkehrsbetriebe"
+        ],
+        "continued": false,
+        "raw_entry": "Werkleitung: Dipl.-Ing. Joseph Hirthammer"
+      },
+      {
+        "name": "Philipp Zölch",
+        "role": "Leitung",
+        "title": "Verw.-Oberinsp.",
+        "address": "Bischof-Sailer-Platz 431/432",
+        "institution_path": [
+          "Städtische Werke",
+          "Abtlg. Kaufmännische Verwaltung"
+        ],
+        "continued": false,
+        "raw_entry": "Leitung: Verw.-Oberinsp. Philipp Zölch"
+      },
+      {
+        "name": "Jos. Falter",
+        "role": "Standesbeamter",
+        "title": "Verwaltungsoberinspektor",
+        "address": "Rathaus Altstadt 315 Zi 42-44",
+        "institution_path": [
+          "Standesamt"
+        ],
+        "continued": false,
+        "raw_entry": "Standesbeamter: Verwaltungsoberinspektor Jos. Falter"
+      },
+      {
+        "name": "Theo Herzog",
+        "role": "Leiter",
+        "title": "Stadtarchivar",
+        "address": "Altstadt 79",
+        "institution_path": [
+          "Statistisches Amt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Stadtarchivar Theo Herzog"
+      },
+      {
+        "name": "Hch. Gillmeier",
+        "role": "Leiter",
+        "title": "Vertragsang.",
+        "address": "Rathaus Altstadt 315 Rückgeb.",
+        "institution_path": [
+          "Stiftungsverwaltung"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Hch. Gillmeier Vertragsang."
+      },
+      {
+        "name": "Jos. de Temple",
+        "role": "Leiter",
+        "title": "Verwaltungsoberinsp.",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Vermittlungsamt, Städt. (Sühneamt)"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Verwaltungsoberinsp. Jos. de Temple"
+      }
+    ]
+  }
+}

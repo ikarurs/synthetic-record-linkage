@@ -1,0 +1,6 @@
+[
+  {"page_id":"sample-a-before","town":"Town A","period":"earlier","image":"pages/sample-a-before.png","name_order":"surname_first"},
+  {"page_id":"sample-a-after","town":"Town A","period":"later","image":"pages/sample-a-after.png","name_order":"given_first"},
+  {"page_id":"sample-b-before","town":"Town A","period":"earlier","image":"pages/sample-b-before.png","name_order":"surname_first"},
+  {"page_id":"sample-b-after","town":"Town A","period":"later","image":"pages/sample-b-after.png","name_order":"given_first"}
+]

@@ -1,0 +1,274 @@
+{
+  "image_sha256": "5c26a77b577cfaae07dd0f5fac3446702d1c9e535781c16e8ae93e9ca435d249",
+  "prompt_sha256": "74a1e329ba96b67b86e11f969348f4b7b9e1b32d9f059cbd29f833e434c62661",
+  "schema_sha256": "5de6361cf2df2eecc68a24e5b100002f4bb137ac3803768e88fa55bccdab0ec0",
+  "config_sha256": "c1e1c15da6e826406d1bb46f6a7939effb11bfe865bd23c9110e57fd11e0770b",
+  "model": "gemini-3.5-flash",
+  "captured_utc": "2026-09-16T14:36:55.033698+00:00",
+  "usage": {
+    "promptTokenCount": 1360,
+    "candidatesTokenCount": 1935,
+    "totalTokenCount": 3295,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 294
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1066
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "generation_config": {
+    "maxOutputTokens": 32768,
+    "thinkingConfig": {
+      "thinkingLevel": "low"
+    },
+    "responseMimeType": "application/json",
+    "responseJsonSchema": {
+      "type": "object",
+      "properties": {
+        "transcription": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "empty_result_reason": {
+          "type": "string"
+        },
+        "active_hierarchy_at_end": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "institution_path": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "continued": {
+                "type": "boolean"
+              },
+              "raw_entry": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "role",
+              "title",
+              "address",
+              "institution_path",
+              "continued",
+              "raw_entry"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "transcription",
+        "confidence",
+        "empty_result_reason",
+        "active_hierarchy_at_end",
+        "entries"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "raw_response_text": "{\n  \"transcription\": \"Landratsamt [redacted] Altstadt 217\\nVorst.: Landrat Franz Graf von Spreti\\nStellv.: Georg Brunner Landwirt\\nJuristischer Nebenbeamter: Oberregierungsrat Rudolf Interschick\\nLandkreisverwaltung-Finanzverwaltung: Kreisoberamtmann Hans Blattner\\nAusgleichsamt [redacted]\\nLand Leiter: Ernst Killermann Kreisangest.\\nBezirksfürsorgeverband [redacted] Leiter: Kreis-insp. Roman Eder\\nKraftfahrzeugzulassungsstelle Leiter: Regierungsobersekr. Georg Schlecht\\nKreisbaumeister Kreisbaurat Jos. Held\\nKreisfachberater für Obst- und Gartenbau- Kreisinsp. Fritz Seiler\\nKreisflüchtlingsamt Leiter: Georg Eiblmeier Kreisbeauftragter für das Flüchtlingswesen\\nKreisjugendamt Leiter: Amtsvorstand Walter Wieser\\nKreisveterinärrat Regierungsveterinärrat Dr. Wilh. Brandl\\nKreiswohnungsamt Leiter: Jos. Fischer Kreisangest.\\nStaatliche Rechnungsprüfungsstelle: Inspektor Jakob Heilmeier\",\n  \"confidence\": 0.95,\n  \"empty_result_reason\": \"\",\n  \"active_hierarchy_at_end\": [\n    \"Landratsamt [redacted] Altstadt 217\"\n  ],\n  \"entries\": [\n    {\n      \"name\": \"Franz Graf von Spreti\",\n      \"role\": \"Vorst.\",\n      \"title\": \"Landrat\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Vorst.: Landrat Franz Graf von Spreti\"\n    },\n    {\n      \"name\": \"Georg Brunner\",\n      \"role\": \"Stellv.\",\n      \"title\": \"Landwirt\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Stellv.: Georg Brunner Landwirt\"\n    },\n    {\n      \"name\": \"Rudolf Interschick\",\n      \"role\": \"Juristischer Nebenbeamter\",\n      \"title\": \"Oberregierungsrat\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Juristischer Nebenbeamter: Oberregierungsrat Rudolf Interschick\"\n    },\n    {\n      \"name\": \"Hans Blattner\",\n      \"role\": \"Landkreisverwaltung-Finanzverwaltung\",\n      \"title\": \"Kreisoberamtmann\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Landkreisverwaltung-Finanzverwaltung: Kreisoberamtmann Hans Blattner\"\n    },\n    {\n      \"name\": \"Ernst Killermann\",\n      \"role\": \"Leiter\",\n      \"title\": \"Kreisangest.\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\",\n        \"Ausgleichsamt [redacted] Land\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Ernst Killermann Kreisangest.\"\n    },\n    {\n      \"name\": \"Roman Eder\",\n      \"role\": \"Leiter\",\n      \"title\": \"Kreis-insp.\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\",\n        \"Bezirksfürsorgeverband [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Kreis-insp. Roman Eder\"\n    },\n    {\n      \"name\": \"Georg Schlecht\",\n      \"role\": \"Leiter\",\n      \"title\": \"Regierungsobersekr.\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\",\n        \"Kraftfahrzeugzulassungsstelle\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Regierungsobersekr. Georg Schlecht\"\n    },\n    {\n      \"name\": \"Jos. Held\",\n      \"role\": \"Kreisbaumeister\",\n      \"title\": \"Kreisbaurat\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Kreisbaumeister Kreisbaurat Jos. Held\"\n    },\n    {\n      \"name\": \"Fritz Seiler\",\n      \"role\": \"Kreisfachberater für Obst- und Gartenbau\",\n      \"title\": \"Kreisinsp.\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Kreisfachberater für Obst- und Gartenbau- Kreisinsp. Fritz Seiler\"\n    },\n    {\n      \"name\": \"Georg Eiblmeier\",\n      \"role\": \"Leiter\",\n      \"title\": \"Kreisbeauftragter für das Flüchtlingswesen\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\",\n        \"Kreisflüchtlingsamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Georg Eiblmeier Kreisbeauftragter für das Flüchtlingswesen\"\n    },\n    {\n      \"name\": \"Walter Wieser\",\n      \"role\": \"Leiter\",\n      \"title\": \"Amtsvorstand\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\",\n        \"Kreisjugendamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Amtsvorstand Walter Wieser\"\n    },\n    {\n      \"name\": \"Dr. Wilh. Brandl\",\n      \"role\": \"Kreisveterinärrat\",\n      \"title\": \"Regierungsveterinärrat\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Kreisveterinärrat Regierungsveterinärrat Dr. Wilh. Brandl\"\n    },\n    {\n      \"name\": \"Jos. Fischer\",\n      \"role\": \"Leiter\",\n      \"title\": \"Kreisangest.\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\",\n        \"Kreiswohnungsamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Leiter: Jos. Fischer Kreisangest.\"\n    },\n    {\n      \"name\": \"Jakob Heilmeier\",\n      \"role\": \"Staatliche Rechnungsprüfungsstelle\",\n      \"title\": \"Inspektor\",\n      \"address\": \"Altstadt 217\",\n      \"institution_path\": [\n        \"Landratsamt [redacted] Altstadt 217\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Staatliche Rechnungsprüfungsstelle: Inspektor Jakob Heilmeier\"\n    }\n  ]\n}",
+  "page": {
+    "transcription": "Landratsamt [redacted] Altstadt 217\nVorst.: Landrat Franz Graf von Spreti\nStellv.: Georg Brunner Landwirt\nJuristischer Nebenbeamter: Oberregierungsrat Rudolf Interschick\nLandkreisverwaltung-Finanzverwaltung: Kreisoberamtmann Hans Blattner\nAusgleichsamt [redacted]\nLand Leiter: Ernst Killermann Kreisangest.\nBezirksfürsorgeverband [redacted] Leiter: Kreis-insp. Roman Eder\nKraftfahrzeugzulassungsstelle Leiter: Regierungsobersekr. Georg Schlecht\nKreisbaumeister Kreisbaurat Jos. Held\nKreisfachberater für Obst- und Gartenbau- Kreisinsp. Fritz Seiler\nKreisflüchtlingsamt Leiter: Georg Eiblmeier Kreisbeauftragter für das Flüchtlingswesen\nKreisjugendamt Leiter: Amtsvorstand Walter Wieser\nKreisveterinärrat Regierungsveterinärrat Dr. Wilh. Brandl\nKreiswohnungsamt Leiter: Jos. Fischer Kreisangest.\nStaatliche Rechnungsprüfungsstelle: Inspektor Jakob Heilmeier",
+    "confidence": 0.95,
+    "empty_result_reason": "",
+    "active_hierarchy_at_end": [
+      "Landratsamt [redacted] Altstadt 217"
+    ],
+    "entries": [
+      {
+        "name": "Franz Graf von Spreti",
+        "role": "Vorst.",
+        "title": "Landrat",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217"
+        ],
+        "continued": false,
+        "raw_entry": "Vorst.: Landrat Franz Graf von Spreti"
+      },
+      {
+        "name": "Georg Brunner",
+        "role": "Stellv.",
+        "title": "Landwirt",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217"
+        ],
+        "continued": false,
+        "raw_entry": "Stellv.: Georg Brunner Landwirt"
+      },
+      {
+        "name": "Rudolf Interschick",
+        "role": "Juristischer Nebenbeamter",
+        "title": "Oberregierungsrat",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217"
+        ],
+        "continued": false,
+        "raw_entry": "Juristischer Nebenbeamter: Oberregierungsrat Rudolf Interschick"
+      },
+      {
+        "name": "Hans Blattner",
+        "role": "Landkreisverwaltung-Finanzverwaltung",
+        "title": "Kreisoberamtmann",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217"
+        ],
+        "continued": false,
+        "raw_entry": "Landkreisverwaltung-Finanzverwaltung: Kreisoberamtmann Hans Blattner"
+      },
+      {
+        "name": "Ernst Killermann",
+        "role": "Leiter",
+        "title": "Kreisangest.",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217",
+          "Ausgleichsamt [redacted] Land"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Ernst Killermann Kreisangest."
+      },
+      {
+        "name": "Roman Eder",
+        "role": "Leiter",
+        "title": "Kreis-insp.",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217",
+          "Bezirksfürsorgeverband [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Kreis-insp. Roman Eder"
+      },
+      {
+        "name": "Georg Schlecht",
+        "role": "Leiter",
+        "title": "Regierungsobersekr.",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217",
+          "Kraftfahrzeugzulassungsstelle"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Regierungsobersekr. Georg Schlecht"
+      },
+      {
+        "name": "Jos. Held",
+        "role": "Kreisbaumeister",
+        "title": "Kreisbaurat",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217"
+        ],
+        "continued": false,
+        "raw_entry": "Kreisbaumeister Kreisbaurat Jos. Held"
+      },
+      {
+        "name": "Fritz Seiler",
+        "role": "Kreisfachberater für Obst- und Gartenbau",
+        "title": "Kreisinsp.",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217"
+        ],
+        "continued": false,
+        "raw_entry": "Kreisfachberater für Obst- und Gartenbau- Kreisinsp. Fritz Seiler"
+      },
+      {
+        "name": "Georg Eiblmeier",
+        "role": "Leiter",
+        "title": "Kreisbeauftragter für das Flüchtlingswesen",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217",
+          "Kreisflüchtlingsamt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Georg Eiblmeier Kreisbeauftragter für das Flüchtlingswesen"
+      },
+      {
+        "name": "Walter Wieser",
+        "role": "Leiter",
+        "title": "Amtsvorstand",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217",
+          "Kreisjugendamt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Amtsvorstand Walter Wieser"
+      },
+      {
+        "name": "Dr. Wilh. Brandl",
+        "role": "Kreisveterinärrat",
+        "title": "Regierungsveterinärrat",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217"
+        ],
+        "continued": false,
+        "raw_entry": "Kreisveterinärrat Regierungsveterinärrat Dr. Wilh. Brandl"
+      },
+      {
+        "name": "Jos. Fischer",
+        "role": "Leiter",
+        "title": "Kreisangest.",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217",
+          "Kreiswohnungsamt"
+        ],
+        "continued": false,
+        "raw_entry": "Leiter: Jos. Fischer Kreisangest."
+      },
+      {
+        "name": "Jakob Heilmeier",
+        "role": "Staatliche Rechnungsprüfungsstelle",
+        "title": "Inspektor",
+        "address": "Altstadt 217",
+        "institution_path": [
+          "Landratsamt [redacted] Altstadt 217"
+        ],
+        "continued": false,
+        "raw_entry": "Staatliche Rechnungsprüfungsstelle: Inspektor Jakob Heilmeier"
+      }
+    ]
+  }
+}

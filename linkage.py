@@ -1,237 +1,141 @@
-"""Extraction, candidate linkage and conservative one-to-one match decisions.
-
-Only evaluate() reads ground truth. Scores are transparent heuristics, not
-probabilities; default settings are illustrative, not estimated from test labels.
-"""
-import csv
-import hashlib
-import math
+"""Small, explicit linkage example over redacted real source excerpts."""
+from collections import defaultdict
+from difflib import SequenceMatcher
+import json
 import re
 import unicodedata
-from collections import Counter, defaultdict
-from difflib import SequenceMatcher
-from pathlib import Path
 
-THRESHOLD = .86
-MARGIN = .08
-RECORD_FIELDS = ["record_id", "year", "town", "name_raw", "given", "surname", "birth",
-                 "role", "address", "source_file", "source_line", "source_sha256", "raw_text", "quality_flags"]
-CANDIDATE_FIELDS = ["left_id", "right_id", "town", "surname_similarity", "given_similarity",
-                    "birth_agreement", "role_similarity", "address_similarity", "score"]
-DECISION_FIELDS = ["left_id", "town", "status", "right_id", "best_candidate_id", "score",
-                   "margin", "reverse_margin", "reason"]
-ISSUE_FIELDS = ["source_file", "source_line", "source_sha256", "raw_text", "reason"]
+from ocr import ROOT, read_page
 
 
 def normalise(value):
-    value = value.casefold().replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss")
-    value = "".join(c for c in unicodedata.normalize("NFKD", value) if not unicodedata.combining(c))
-    return " ".join(re.sub(r"[^a-z0-9 ]", " ", value).split())
+    value = value.lower().translate(str.maketrans({'ä':'ae','ö':'oe','ü':'ue','ß':'ss'}))
+    value = ''.join(c for c in unicodedata.normalize('NFKD', value) if not unicodedata.combining(c))
+    return ' '.join(re.findall(r'[a-z]+', value))
 
 
-def read_csv(path):
-    with Path(path).open(encoding="utf-8-sig", newline="") as handle:
-        return list(csv.DictReader(handle))
+def parse_name(value, order):
+    value = re.sub(r'\b(?:Dr|Prof)\.?\s*', '', value, flags=re.I)
+    if ',' in value:
+        surname, given = value.split(',', 1)
+        return normalise(given), normalise(surname)
+    words = normalise(value).split()
+    if len(words) < 2:
+        return '', ' '.join(words)
+    # ponytail: page-level order is visually reviewed for these excerpts. Mixed
+    # lists and ambiguous compound names need the research workflow's context rule.
+    if order == 'surname_first':
+        return words[-1], ' '.join(words[:-1])
+    if order == 'given_first':
+        return ' '.join(words[:-1]), words[-1]
+    raise ValueError('Unsupported name order')
 
 
-def write_csv(path, rows, fields):
-    with Path(path).open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
+def extract():
+    manifest = json.loads((ROOT/'data/manifest.json').read_text(encoding='utf-8'))
+    if len({p['page_id'] for p in manifest}) != len(manifest):
+        raise ValueError('Duplicate page ID')
+    records, pages = [], []
+    for meta in manifest:
+        saved = read_page(meta)
+        page = saved['page']
+        for i, entry in enumerate(page['entries'], 1):
+            given, surname = parse_name(entry['name'], meta['name_order'])
+            records.append(dict(record_id=f"{meta['page_id']}:{i:03d}",page_id=meta['page_id'],
+                town=meta['town'],period=meta['period'],name=entry['name'],given=given,surname=surname,
+                role=entry['role'],title=entry['title'],institution=' > '.join(entry['institution_path']),
+                address=entry['address'],raw_entry=entry['raw_entry'],
+                ocr_confidence=page['confidence'],image_sha256=saved['image_sha256']))
+        pages.append(dict(page_id=meta['page_id'],people=len(page['entries']),model=saved['model'],
+                          confidence=page['confidence'],empty_reason=page['empty_result_reason']))
+    return records,pages
 
 
-def extract(pages):
-    """Parse two documented transcription layouts; preserve failures and provenance.
+def select_anchors(records, anchors):
+    selected=[]
+    for anchor in anchors:
+        options=[r for r in records if r['page_id']==anchor['page_id'] and normalise(r['name'])==normalise(anchor['name_query'])]
+        if len(options)!=1:
+            raise ValueError(f"Anchor {anchor['case_id']} needs source review: found {len(options)} records")
+        selected.append(dict(options[0],case_id=anchor['case_id']))
+    return selected
 
-    This starts from OCR-like text, not images. Unknown page metadata fails closed;
-    unparseable body lines are retained in a rejection table, never silently dropped.
-    """
-    records, issues = [], []
-    files = sorted(Path(pages).glob("*.txt"))
-    if not files:
-        raise ValueError("No source pages found")
-    patterns = {
-        1920: r"\d+\s*\|\s*(.*?)\s*\|\s*b\.\s*([^|]+)\|\s*([^|]+)\|\s*(.*)",
-        1930: r"\d+\.\s*(.*?)\s*;\s*born\s*([^;]+);\s*role=([^;]+);\s*addr=(.*)",
-    }
-    for file in files:
-        raw = file.read_bytes()
-        digest = hashlib.sha256(raw).hexdigest()
-        lines = raw.decode("utf-8").splitlines()
-        if len(lines) < 4 or not lines[1].startswith("Municipality: ") or not lines[2].startswith("Year: "):
-            raise ValueError(f"Invalid page metadata: {file.name}")
-        town, year = lines[1].split(": ", 1)[1], int(lines[2].split(": ", 1)[1])
-        if not town.strip() or year not in patterns:
-            raise ValueError(f"Unsupported town/year: {file.name}")
-        for line_number, line in enumerate(lines[4:], 5):
-            if not line.strip():
+
+def sim(a,b):
+    return SequenceMatcher(None,normalise(a),normalise(b)).ratio() if a and b else 0.
+
+
+def given_evidence(a,b):
+    if not a or not b:
+        return 'missing',0.
+    if a==b:
+        return 'exact',1.
+    short,long=sorted((a,b),key=len)
+    if long.startswith(short):
+        return ('initial',.5) if len(short)==1 else ('abbreviation',.8)
+    return 'conflict',0.
+
+
+def career_text(value):
+    value=normalise(value)
+    for short,full in {'stadtamtm':'stadtamtmann','verwaltungsinsp':'verwaltungsinspektor',
+                       'verw':'verwaltung','oberinsp':'oberinspektor'}.items():
+        value=re.sub(r'\b'+short+r'\b',full,value)
+    return value
+
+
+def candidate_pairs(anchors,records):
+    pairs=[]
+    for left in anchors:
+        for right in records:
+            if right['period']!='later' or left['town']!=right['town']:
                 continue
-            source = dict(source_file=file.name, source_line=line_number, source_sha256=digest, raw_text=line)
-            match = re.fullmatch(patterns[year], line.strip())
-            if not match:
-                issues.append(dict(source, reason="unrecognised_row_layout"))
+            surname=sim(left['surname'],right['surname'])
+            if surname<.82:
                 continue
-            name, birth, role, address = [x.strip() for x in match.groups()]
-            if year == 1920 and name.count(",") == 1:
-                surname, given = [x.strip() for x in name.split(",")]
-            elif year == 1930 and len(name.split()) == 2:
-                given, surname = name.split()
-            else:
-                issues.append(dict(source, reason="unsupported_name_structure"))
-                continue
-            if not normalise(given) or not normalise(surname):
-                issues.append(dict(source, reason="missing_name"))
-                continue
-            birth = "" if birth == "?" else birth
-            if birth and (not re.fullmatch(r"\d{4}", birth) or not year - 100 <= int(birth) <= year - 16):
-                issues.append(dict(source, reason="invalid_birth_year"))
-                continue
-            flags = []
-            if not birth:
-                flags.append("missing_birth")
-            if len(normalise(given)) == 1:
-                flags.append("given_initial")
-            if address == "?":
-                address = ""
-                flags.append("missing_address")
-            records.append(dict(source, record_id=f"{file.stem}:L{line_number:03d}", year=year, town=town,
-                                name_raw=name, given=normalise(given), surname=normalise(surname),
-                                birth=birth, role=normalise(role), address=normalise(address),
-                                quality_flags="|".join(flags)))
-    validate_records(records)
-    return records, issues
+            relation,given=given_evidence(left['given'],right['given'])
+            # Compare role and title across fields: extraction can allocate a rank
+            # to either field without losing the underlying printed evidence.
+            career=max(sim(career_text(left[a]),career_text(right[b]))
+                       for a in ('role','title') for b in ('role','title'))
+            institution=sim(left['institution'],right['institution'])
+            context=max(career,institution)
+            score=.55*surname+.25*given+.20*context
+            pairs.append(dict(case_id=left['case_id'],left_id=left['record_id'],right_id=right['record_id'],
+                left_name=left['name'],right_name=right['name'],right_page=right['page_id'],
+                surname_similarity=surname,given_relation=relation,given_agreement=given,
+                career_similarity=career,institution_similarity=institution,score=score,
+                ocr_min=min(left['ocr_confidence'],right['ocr_confidence'])))
+    return sorted(pairs,key=lambda p:(p['case_id'],-p['score'],p['right_id']))
 
 
-def validate_records(records):
-    seen = set()
-    for row in records:
-        if set(RECORD_FIELDS) - row.keys():
-            raise ValueError("Incomplete record schema")
-        if not row["record_id"] or row["record_id"] in seen:
-            raise ValueError("Empty or duplicate record ID")
-        seen.add(row["record_id"])
-        if int(row["year"]) not in (1920, 1930) or not row["town"] or not row["surname"] or not row["given"]:
-            raise ValueError("Invalid record year, town or name")
-
-
-def similarity(left, right):
-    # Missing evidence contributes zero; it is not interpreted as disagreement.
-    return SequenceMatcher(None, left, right, autojunk=False).ratio() if left and right else 0.
-
-
-def score_pair(left, right):
-    given = similarity(left["given"], right["given"])
-    if left["given"][0] == right["given"][0] and min(len(left["given"]), len(right["given"])) == 1:
-        given = .65  # An initial is weaker evidence than a complete first name.
-    parts = dict(surname_similarity=similarity(left["surname"], right["surname"]),
-                 given_similarity=given,
-                 birth_agreement=int(bool(left["birth"]) and left["birth"] == right["birth"]),
-                 role_similarity=similarity(left["role"], right["role"]),
-                 address_similarity=similarity(left["address"], right["address"]))
-    score = sum(parts[key] * weight for key, weight in zip(parts, (.45, .25, .20, .05, .05)))
-    return dict(parts, score=round(score, 6))
-
-
-def candidates(records, same_town=True):
-    """Block by town (optional), then retain surname similarity >= .55.
-
-    ponytail: quadratic comparisons suit this 320-record demo; use indexed
-    blocking for a large register instead of scaling the all-pairs exercise.
-    """
-    validate_records(records)
-    left = [r for r in records if int(r["year"]) == 1920]
-    right = [r for r in records if int(r["year"]) == 1930]
-    result = []
-    for a in left:
-        for b in right:
-            if same_town and a["town"] != b["town"]:
-                continue
-            parts = score_pair(a, b)
-            if parts["surname_similarity"] >= .55:
-                result.append(dict(left_id=a["record_id"], right_id=b["record_id"], town=a["town"], **parts))
-    return result
-
-
-def find_matches(records, pairs, threshold=THRESHOLD, margin=MARGIN):
-    """Accept only mutual first choices with sufficient score and both margins.
-
-    This deliberately abstains rather than forcing a global one-to-one assignment.
-    No truth labels enter this function; ties remain review cases even at margin=0.
-    """
-    validate_records(records)
-    if not all(math.isfinite(x) and 0 <= x <= 1 for x in (threshold, margin)):
-        raise ValueError("Threshold and margin must be finite numbers in [0, 1]")
-    left_ids = {r["record_id"] for r in records if int(r["year"]) == 1920}
-    right_ids = {r["record_id"] for r in records if int(r["year"]) == 1930}
-    forward, reverse, seen = defaultdict(list), defaultdict(list), set()
+def find_matches(anchors,pairs,threshold=.84,margin=.08):
+    if not 0<=threshold<=1 or not 0<=margin<=1:
+        raise ValueError('Threshold and margin must be finite and in [0,1]')
+    if len({(p['left_id'],p['right_id']) for p in pairs})!=len(pairs):
+        raise ValueError('Duplicate candidate')
+    grouped,reverse=defaultdict(list),defaultdict(list)
     for pair in pairs:
-        key = pair["left_id"], pair["right_id"]
-        if key in seen or key[0] not in left_ids or key[1] not in right_ids:
-            raise ValueError("Duplicate candidate pair or unknown source identity")
-        if not math.isfinite(float(pair["score"])) or not 0 <= float(pair["score"]) <= 1:
-            raise ValueError("Invalid candidate score")
-        seen.add(key)
-        forward[key[0]].append(pair)
-        reverse[key[1]].append(pair)
-    for groups in (forward, reverse):
-        for values in groups.values():
-            values.sort(key=lambda p: (-float(p["score"]), p["left_id"], p["right_id"]))
-    def gap(values):
-        return float(values[0]["score"]) - (float(values[1]["score"]) if len(values) > 1 else 0.)
-    decisions = []
-    for left in (r for r in records if int(r["year"]) == 1920):
-        options = forward[left["record_id"]]
-        row = dict(left_id=left["record_id"], town=left["town"], status="unmatched", right_id="",
-                   best_candidate_id="", score="", margin="", reverse_margin="", reason="no_candidates")
-        if options:
-            best = options[0]
-            rivals = reverse[best["right_id"]]
-            forward_gap, reverse_gap = gap(options), gap(rivals)
-            row.update(best_candidate_id=best["right_id"], score=float(best["score"]),
-                       margin=round(forward_gap, 6), reverse_margin=round(reverse_gap, 6))
-            if float(best["score"]) < threshold:
-                row.update(status="review" if float(best["score"]) >= .55 else "unmatched", reason="below_threshold")
-            elif forward_gap <= 1e-12 or forward_gap + 1e-12 < margin:
-                row.update(status="review", reason="ambiguous_source")
-            elif rivals[0]["left_id"] != left["record_id"] or reverse_gap <= 1e-12 or reverse_gap + 1e-12 < margin:
-                row.update(status="review", reason="contested_target")
-            else:
-                row.update(status="accepted", right_id=best["right_id"], reason="mutual_best_with_margin")
-        decisions.append(row)
-    accepted = [r["right_id"] for r in decisions if r["status"] == "accepted"]
-    assert len(accepted) == len(set(accepted)), "Target assigned twice"
+        grouped[pair['case_id']].append(pair)
+        reverse[pair['right_id']].append(pair)
+    for values in [*grouped.values(),*reverse.values()]:
+        values.sort(key=lambda p:(-p['score'],p['left_id'],p['right_id']))
+    decisions=[]
+    for anchor in anchors:
+        choices=grouped[anchor['case_id']]
+        best=choices[0] if choices else None
+        gap=best['score']-choices[1]['score'] if len(choices)>1 else best['score'] if best else 0.
+        rivals=reverse[best['right_id']] if best else []
+        reverse_gap=rivals[0]['score']-rivals[1]['score'] if len(rivals)>1 else best['score'] if best else 0.
+        reason=('no_candidate' if not best else 'given_name_conflict' if best['given_relation']=='conflict'
+                else 'insufficient_name_evidence' if best['given_relation'] in ('initial','missing')
+                else 'ambiguous_candidates' if min(gap,reverse_gap)<=1e-10 or min(gap,reverse_gap)<margin
+                else 'not_mutual_best' if rivals[0]['left_id']!=anchor['record_id']
+                else 'source_uncertain' if best['ocr_min']<.8
+                else 'below_threshold' if best['score']<threshold else 'accepted')
+        status='accepted' if reason=='accepted' else 'no_link' if reason in ('no_candidate','given_name_conflict') else 'review'
+        decisions.append(dict(case_id=anchor['case_id'],name=anchor['name'],status=status,reason=reason,
+            right_id=best['right_id'] if status=='accepted' else '',
+            best_candidate=best['right_name'] if best else '',score=best['score'] if best else None,
+            margin=gap,reverse_margin=reverse_gap))
     return decisions
-
-
-def evaluate(decisions, pairs, truth):
-    """Evaluate ALL baseline identities, including movers, rejects and abstentions.
-
-    Recall denominator: all true continuers, not just those inside candidate blocks.
-    Coverage denominator: all baseline people. Undefined rates remain None.
-    """
-    truth_map = {r["left_id"]: r["right_id"] for r in truth}
-    if len(truth_map) != len(truth) or "" in truth_map:
-        raise ValueError("Duplicate or empty truth identity")
-    decisions_map = {r["left_id"]: r for r in decisions}
-    if len(decisions_map) != len(decisions) or "" in decisions_map:
-        raise ValueError("Duplicate or empty decision identity")
-    if set(truth_map) - decisions_map.keys():
-        raise ValueError("Evaluation has missing baseline decisions")
-    real_pairs = {(left, right) for left, right in truth_map.items() if right}
-    candidate_pairs = {(r["left_id"], r["right_id"]) for r in pairs}
-    accepted = {(r["left_id"], r["right_id"]) for r in decisions
-                if r["status"] == "accepted" and r["left_id"] in truth_map}
-    correct = len(accepted & real_pairs)
-    counts = Counter(decisions_map[key]["status"] for key in truth_map)
-    ratio = lambda num, den: num / den if den else None
-    return dict(baseline=len(truth_map), true_links=len(real_pairs), accepted=len(accepted),
-                correct=correct, false_links=len(accepted) - correct, review=counts["review"],
-                unmatched=counts["unmatched"], precision=ratio(correct, len(accepted)),
-                recall=ratio(correct, len(real_pairs)), coverage=ratio(len(accepted), len(truth_map)),
-                candidate_recall=ratio(len(real_pairs & candidate_pairs), len(real_pairs)))
-
-
-def threshold_sweep(records, pairs, development_truth):
-    return [dict(threshold=t, **evaluate(find_matches(records, pairs, t), pairs, development_truth))
-            for t in (.55, .60, .65, .70, .75, .80, .86, .90, .95, 1.)]

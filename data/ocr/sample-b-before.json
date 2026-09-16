@@ -1,0 +1,640 @@
+{
+  "image_sha256": "819d45dfbb10b659bfecfb4cfad619c59b9a34be6071f2bb659bf301533f8c4c",
+  "prompt_sha256": "74a1e329ba96b67b86e11f969348f4b7b9e1b32d9f059cbd29f833e434c62661",
+  "schema_sha256": "5de6361cf2df2eecc68a24e5b100002f4bb137ac3803768e88fa55bccdab0ec0",
+  "config_sha256": "c1e1c15da6e826406d1bb46f6a7939effb11bfe865bd23c9110e57fd11e0770b",
+  "model": "gemini-3.5-flash",
+  "captured_utc": "2026-09-16T14:36:58.340563+00:00",
+  "usage": {
+    "promptTokenCount": 1386,
+    "candidatesTokenCount": 5578,
+    "totalTokenCount": 6964,
+    "promptTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1092
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 294
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "generation_config": {
+    "maxOutputTokens": 32768,
+    "thinkingConfig": {
+      "thinkingLevel": "low"
+    },
+    "responseMimeType": "application/json",
+    "responseJsonSchema": {
+      "type": "object",
+      "properties": {
+        "transcription": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "empty_result_reason": {
+          "type": "string"
+        },
+        "active_hierarchy_at_end": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "institution_path": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "continued": {
+                "type": "boolean"
+              },
+              "raw_entry": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "role",
+              "title",
+              "address",
+              "institution_path",
+              "continued",
+              "raw_entry"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "transcription",
+        "confidence",
+        "empty_result_reason",
+        "active_hierarchy_at_end",
+        "entries"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "raw_response_text": "{\n  \"transcription\": \"Lorenz Wilhelm Oberregierungsrat\\nSchmidt Karl Oberregierungsrat\\nCrug Karl Forstmeister\\nErffa Otto Freiherr von Regierungs=\\nforstrat\\nAufhammer Walter Regierungs=\\nforstrat\\nPrimbs Hub. Regierungsforstrat\\nLedermann Franz Regierungsforstrat\\nFischer Philipp Regierungsforstrat\\nZiegler Rudolf Regierungsforstrat\\nZimmermann Hubert Regierungs=\\nforstrat\\nSchießl Josef Rechnungsrat,\\nGeschäftsleiter\\nEberlein Oskar Rechnungsrat\\nWeiß Max Rechnungsoberinspektor\\nSteinberger Josef Rechnungsoberinsp.\\nProbst Benedikt Rechnungsober=\\ninspektor\\nBreitenbach Max Rechnungsoberinsp.\\nJäger Albert Rechnungsoberinspektor\\nStumpf Artur Rechnungsoberinsp.\\nHögner Anton Rechnungsinspektor\\nKöppel Adolf Rechnungsinspektor\\nZimmermann Josef Rechnungsinsp.\\nGof Josef Rechnungsinspektor\\nPlatiel Walter Verwaltungssekretär\\n\\nKommando der Gendarmerie=\\nAbteilung bei der Regierung\\n[redacted]\\nBismarckplatz 1 2251 und 2255\\nNebenstelle 146-149\\nEder Rupert Oberstleutnant der Gen=\\ndarmerie und Abtlg.-Kommandeur\\nGerbel Ferdinand Hauptmann der\\nGendarmerie\\nWeigert Hans Hauptmann der Gen=\\ndarmerie\\nFalkenberg Harold Hauptmann der\\nGendarmerie\\nSchurath Georg Gendarmerie-Insp.\\n\\nHecht Georg Gendarmerie-Inspektor\\nBasold Georg Gendarmerie-Inspektor\\nHeindl Josef Gendarmerie-Inspektor\\nBöckl Michael Gendarmerie-Inspektor\\nBuch Adam Gendarmerie-Inspektor\\nBachinger Otto Gendarmerie-Sekret.\\nWießner Karl Gendarmerie-Sekretär\\nSeider Albert Gendarmerie-Ober=\\nwachtmeister\\nStahl Xaver Amtsoffiziant\\n\\nGewerbeaufsicht\\nObermünsterstraße 16\\n2251-2258 Nebenstelle 4/6\\nBertram Friedrich Oberregierungsrat\\nStallechner Josef Regierungs=\\ngewerberat 1. Klasse\\nLangfeld Josef Gewerbeinspektor\\nHüttner Matthäus Gewerbeinspektor\\nPanzer Ida Gewerbekommissärin\\nSchön Ludwig Gewerbeaufsichts=\\nhilfsassistent\\nGraf Josef Kanzleisekretär\\n\\nKreisfürsorgestelle für Kriegs=\\nbeschädigte und Kriegshinter=\\n[redacted]\\nObermünsterstraße 16\\n2251-2258 Nebenstelle 4/6\\nMerz Karl von Oberregierungsrat,\\nLeiter\\nVoraus Franz Rechnungsinspektor\\nKormann Anton Verwaltungsinsp.\\nRiedl Josef Verwaltungsinspektor\\nHahn Andreas Verwaltungsinspektor\\nRöscheisen Karl Verwaltungsinspekt.\\nAlbrecht Paul Kanzleiobersekretär\\nWolf Anna Kanzleiassistentin\",\n  \"confidence\": 0.95,\n  \"empty_result_reason\": \"\",\n  \"active_hierarchy_at_end\": [\n    \"Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]\"\n  ],\n  \"entries\": [\n    {\n      \"name\": \"Lorenz Wilhelm\",\n      \"role\": \"\",\n      \"title\": \"Oberregierungsrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Lorenz Wilhelm Oberregierungsrat\"\n    },\n    {\n      \"name\": \"Schmidt Karl\",\n      \"role\": \"\",\n      \"title\": \"Oberregierungsrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Schmidt Karl Oberregierungsrat\"\n    },\n    {\n      \"name\": \"Crug Karl\",\n      \"role\": \"\",\n      \"title\": \"Forstmeister\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Crug Karl Forstmeister\"\n    },\n    {\n      \"name\": \"Erffa Otto\",\n      \"role\": \"\",\n      \"title\": \"Freiherr von Regierungsforstrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Erffa Otto Freiherr von Regierungsforstrat\"\n    },\n    {\n      \"name\": \"Aufhammer Walter\",\n      \"role\": \"\",\n      \"title\": \"Regierungsforstrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Aufhammer Walter Regierungsforstrat\"\n    },\n    {\n      \"name\": \"Primbs Hub.\",\n      \"role\": \"\",\n      \"title\": \"Regierungsforstrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Primbs Hub. Regierungsforstrat\"\n    },\n    {\n      \"name\": \"Ledermann Franz\",\n      \"role\": \"\",\n      \"title\": \"Regierungsforstrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Ledermann Franz Regierungsforstrat\"\n    },\n    {\n      \"name\": \"Fischer Philipp\",\n      \"role\": \"\",\n      \"title\": \"Regierungsforstrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Fischer Philipp Regierungsforstrat\"\n    },\n    {\n      \"name\": \"Ziegler Rudolf\",\n      \"role\": \"\",\n      \"title\": \"Regierungsforstrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Ziegler Rudolf Regierungsforstrat\"\n    },\n    {\n      \"name\": \"Zimmermann Hubert\",\n      \"role\": \"\",\n      \"title\": \"Regierungsforstrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Zimmermann Hubert Regierungsforstrat\"\n    },\n    {\n      \"name\": \"Schießl Josef\",\n      \"role\": \"Geschäftsleiter\",\n      \"title\": \"Rechnungsrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Schießl Josef Rechnungsrat, Geschäftsleiter\"\n    },\n    {\n      \"name\": \"Eberlein Oskar\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsrat\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Eberlein Oskar Rechnungsrat\"\n    },\n    {\n      \"name\": \"Weiß Max\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsoberinspektor\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Weiß Max Rechnungsoberinspektor\"\n    },\n    {\n      \"name\": \"Steinberger Josef\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsoberinsp.\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Steinberger Josef Rechnungsoberinsp.\"\n    },\n    {\n      \"name\": \"Probst Benedikt\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsoberinspektor\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Probst Benedikt Rechnungsoberinspektor\"\n    },\n    {\n      \"name\": \"Breitenbach Max\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsoberinsp.\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Breitenbach Max Rechnungsoberinsp.\"\n    },\n    {\n      \"name\": \"Jäger Albert\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsoberinspektor\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Jäger Albert Rechnungsoberinspektor\"\n    },\n    {\n      \"name\": \"Stumpf Artur\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsoberinsp.\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Stumpf Artur Rechnungsoberinsp.\"\n    },\n    {\n      \"name\": \"Högner Anton\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsinspektor\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Högner Anton Rechnungsinspektor\"\n    },\n    {\n      \"name\": \"Köppel Adolf\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsinspektor\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Köppel Adolf Rechnungsinspektor\"\n    },\n    {\n      \"name\": \"Zimmermann Josef\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsinsp.\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Zimmermann Josef Rechnungsinsp.\"\n    },\n    {\n      \"name\": \"Goß Josef\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsinspektor\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Gof Josef Rechnungsinspektor\"\n    },\n    {\n      \"name\": \"Platiel Walter\",\n      \"role\": \"\",\n      \"title\": \"Verwaltungssekretär\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Platiel Walter Verwaltungssekretär\"\n    },\n    {\n      \"name\": \"Eder Rupert\",\n      \"role\": \"Abtlg.-Kommandeur\",\n      \"title\": \"Oberstleutnant der Gendarmerie\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Eder Rupert Oberstleutnant der Gendarmerie und Abtlg.-Kommandeur\"\n    },\n    {\n      \"name\": \"Gerbel Ferdinand\",\n      \"role\": \"\",\n      \"title\": \"Hauptmann der Gendarmerie\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Gerbel Ferdinand Hauptmann der Gendarmerie\"\n    },\n    {\n      \"name\": \"Weigert Hans\",\n      \"role\": \"\",\n      \"title\": \"Hauptmann der Gendarmerie\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Weigert Hans Hauptmann der Gendarmerie\"\n    },\n    {\n      \"name\": \"Falkenberg Harold\",\n      \"role\": \"\",\n      \"title\": \"Hauptmann der Gendarmerie\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Falkenberg Harold Hauptmann der Gendarmerie\"\n    },\n    {\n      \"name\": \"Schurath Georg\",\n      \"role\": \"\",\n      \"title\": \"Gendarmerie-Insp.\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Schurath Georg Gendarmerie-Insp.\"\n    },\n    {\n      \"name\": \"Hecht Georg\",\n      \"role\": \"\",\n      \"title\": \"Gendarmerie-Inspektor\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Hecht Georg Gendarmerie-Inspektor\"\n    },\n    {\n      \"name\": \"Basold Georg\",\n      \"role\": \"\",\n      \"title\": \"Gendarmerie-Inspektor\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Basold Georg Gendarmerie-Inspektor\"\n    },\n    {\n      \"name\": \"Heindl Josef\",\n      \"role\": \"\",\n      \"title\": \"Gendarmerie-Inspektor\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Heindl Josef Gendarmerie-Inspektor\"\n    },\n    {\n      \"name\": \"Böckl Michael\",\n      \"role\": \"\",\n      \"title\": \"Gendarmerie-Inspektor\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Böckl Michael Gendarmerie-Inspektor\"\n    },\n    {\n      \"name\": \"Buch Adam\",\n      \"role\": \"\",\n      \"title\": \"Gendarmerie-Inspektor\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Buch Adam Gendarmerie-Inspektor\"\n    },\n    {\n      \"name\": \"Bachinger Otto\",\n      \"role\": \"\",\n      \"title\": \"Gendarmerie-Sekret.\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Bachinger Otto Gendarmerie-Sekret.\"\n    },\n    {\n      \"name\": \"Wießner Karl\",\n      \"role\": \"\",\n      \"title\": \"Gendarmerie-Sekretär\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Wießner Karl Gendarmerie-Sekretär\"\n    },\n    {\n      \"name\": \"Seider Albert\",\n      \"role\": \"\",\n      \"title\": \"Gendarmerie-Oberwachtmeister\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Seider Albert Gendarmerie-Oberwachtmeister\"\n    },\n    {\n      \"name\": \"Stahl Xaver\",\n      \"role\": \"\",\n      \"title\": \"Amtsoffiziant\",\n      \"address\": \"Bismarckplatz 1\",\n      \"institution_path\": [\n        \"Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Stahl Xaver Amtsoffiziant\"\n    },\n    {\n      \"name\": \"Bertram Friedrich\",\n      \"role\": \"\",\n      \"title\": \"Oberregierungsrat\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Gewerbeaufsicht\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Bertram Friedrich Oberregierungsrat\"\n    },\n    {\n      \"name\": \"Stallechner Josef\",\n      \"role\": \"\",\n      \"title\": \"Regierungsgewerberat 1. Klasse\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Gewerbeaufsicht\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Stallechner Josef Regierungsgewerberat 1. Klasse\"\n    },\n    {\n      \"name\": \"Langfeld Josef\",\n      \"role\": \"\",\n      \"title\": \"Gewerbeinspektor\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Gewerbeaufsicht\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Langfeld Josef Gewerbeinspektor\"\n    },\n    {\n      \"name\": \"Hüttner Matthäus\",\n      \"role\": \"\",\n      \"title\": \"Gewerbeinspektor\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Gewerbeaufsicht\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Hüttner Matthäus Gewerbeinspektor\"\n    },\n    {\n      \"name\": \"Panzer Ida\",\n      \"role\": \"\",\n      \"title\": \"Gewerbekommissärin\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Gewerbeaufsicht\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Panzer Ida Gewerbekommissärin\"\n    },\n    {\n      \"name\": \"Schön Ludwig\",\n      \"role\": \"\",\n      \"title\": \"Gewerbeaufsichtshilfsassistent\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Gewerbeaufsicht\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Schön Ludwig Gewerbeaufsichtshilfsassistent\"\n    },\n    {\n      \"name\": \"Graf Josef\",\n      \"role\": \"\",\n      \"title\": \"Kanzleisekretär\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Gewerbeaufsicht\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Graf Josef Kanzleisekretär\"\n    },\n    {\n      \"name\": \"Merz Karl von\",\n      \"role\": \"Leiter\",\n      \"title\": \"Oberregierungsrat\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Merz Karl von Oberregierungsrat, Leiter\"\n    },\n    {\n      \"name\": \"Voraus Franz\",\n      \"role\": \"\",\n      \"title\": \"Rechnungsinspektor\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Voraus Franz Rechnungsinspektor\"\n    },\n    {\n      \"name\": \"Kormann Anton\",\n      \"role\": \"\",\n      \"title\": \"Verwaltungsinsp.\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Kormann Anton Verwaltungsinsp.\"\n    },\n    {\n      \"name\": \"Riedl Josef\",\n      \"role\": \"\",\n      \"title\": \"Verwaltungsinspektor\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Riedl Josef Verwaltungsinspektor\"\n    },\n    {\n      \"name\": \"Hahn Andreas\",\n      \"role\": \"\",\n      \"title\": \"Verwaltungsinspektor\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Hahn Andreas Verwaltungsinspektor\"\n    },\n    {\n      \"name\": \"Röscheisen Karl\",\n      \"role\": \"\",\n      \"title\": \"Verwaltungsinspekt.\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Röscheisen Karl Verwaltungsinspekt.\"\n    },\n    {\n      \"name\": \"Albrecht Paul\",\n      \"role\": \"\",\n      \"title\": \"Kanzleiobersekretär\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Albrecht Paul Kanzleiobersekretär\"\n    },\n    {\n      \"name\": \"Wolf Anna\",\n      \"role\": \"\",\n      \"title\": \"Kanzleiassistentin\",\n      \"address\": \"Obermünsterstraße 16\",\n      \"institution_path\": [\n        \"Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Wolf Anna Kanzleiassistentin\"\n    }\n  ]\n}",
+  "page": {
+    "transcription": "Lorenz Wilhelm Oberregierungsrat\nSchmidt Karl Oberregierungsrat\nCrug Karl Forstmeister\nErffa Otto Freiherr von Regierungs=\nforstrat\nAufhammer Walter Regierungs=\nforstrat\nPrimbs Hub. Regierungsforstrat\nLedermann Franz Regierungsforstrat\nFischer Philipp Regierungsforstrat\nZiegler Rudolf Regierungsforstrat\nZimmermann Hubert Regierungs=\nforstrat\nSchießl Josef Rechnungsrat,\nGeschäftsleiter\nEberlein Oskar Rechnungsrat\nWeiß Max Rechnungsoberinspektor\nSteinberger Josef Rechnungsoberinsp.\nProbst Benedikt Rechnungsober=\ninspektor\nBreitenbach Max Rechnungsoberinsp.\nJäger Albert Rechnungsoberinspektor\nStumpf Artur Rechnungsoberinsp.\nHögner Anton Rechnungsinspektor\nKöppel Adolf Rechnungsinspektor\nZimmermann Josef Rechnungsinsp.\nGof Josef Rechnungsinspektor\nPlatiel Walter Verwaltungssekretär\n\nKommando der Gendarmerie=\nAbteilung bei der Regierung\n[redacted]\nBismarckplatz 1 2251 und 2255\nNebenstelle 146-149\nEder Rupert Oberstleutnant der Gen=\ndarmerie und Abtlg.-Kommandeur\nGerbel Ferdinand Hauptmann der\nGendarmerie\nWeigert Hans Hauptmann der Gen=\ndarmerie\nFalkenberg Harold Hauptmann der\nGendarmerie\nSchurath Georg Gendarmerie-Insp.\n\nHecht Georg Gendarmerie-Inspektor\nBasold Georg Gendarmerie-Inspektor\nHeindl Josef Gendarmerie-Inspektor\nBöckl Michael Gendarmerie-Inspektor\nBuch Adam Gendarmerie-Inspektor\nBachinger Otto Gendarmerie-Sekret.\nWießner Karl Gendarmerie-Sekretär\nSeider Albert Gendarmerie-Ober=\nwachtmeister\nStahl Xaver Amtsoffiziant\n\nGewerbeaufsicht\nObermünsterstraße 16\n2251-2258 Nebenstelle 4/6\nBertram Friedrich Oberregierungsrat\nStallechner Josef Regierungs=\ngewerberat 1. Klasse\nLangfeld Josef Gewerbeinspektor\nHüttner Matthäus Gewerbeinspektor\nPanzer Ida Gewerbekommissärin\nSchön Ludwig Gewerbeaufsichts=\nhilfsassistent\nGraf Josef Kanzleisekretär\n\nKreisfürsorgestelle für Kriegs=\nbeschädigte und Kriegshinter=\n[redacted]\nObermünsterstraße 16\n2251-2258 Nebenstelle 4/6\nMerz Karl von Oberregierungsrat,\nLeiter\nVoraus Franz Rechnungsinspektor\nKormann Anton Verwaltungsinsp.\nRiedl Josef Verwaltungsinspektor\nHahn Andreas Verwaltungsinspektor\nRöscheisen Karl Verwaltungsinspekt.\nAlbrecht Paul Kanzleiobersekretär\nWolf Anna Kanzleiassistentin",
+    "confidence": 0.95,
+    "empty_result_reason": "",
+    "active_hierarchy_at_end": [
+      "Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]"
+    ],
+    "entries": [
+      {
+        "name": "Lorenz Wilhelm",
+        "role": "",
+        "title": "Oberregierungsrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Lorenz Wilhelm Oberregierungsrat"
+      },
+      {
+        "name": "Schmidt Karl",
+        "role": "",
+        "title": "Oberregierungsrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Schmidt Karl Oberregierungsrat"
+      },
+      {
+        "name": "Crug Karl",
+        "role": "",
+        "title": "Forstmeister",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Crug Karl Forstmeister"
+      },
+      {
+        "name": "Erffa Otto",
+        "role": "",
+        "title": "Freiherr von Regierungsforstrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Erffa Otto Freiherr von Regierungsforstrat"
+      },
+      {
+        "name": "Aufhammer Walter",
+        "role": "",
+        "title": "Regierungsforstrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Aufhammer Walter Regierungsforstrat"
+      },
+      {
+        "name": "Primbs Hub.",
+        "role": "",
+        "title": "Regierungsforstrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Primbs Hub. Regierungsforstrat"
+      },
+      {
+        "name": "Ledermann Franz",
+        "role": "",
+        "title": "Regierungsforstrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Ledermann Franz Regierungsforstrat"
+      },
+      {
+        "name": "Fischer Philipp",
+        "role": "",
+        "title": "Regierungsforstrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Fischer Philipp Regierungsforstrat"
+      },
+      {
+        "name": "Ziegler Rudolf",
+        "role": "",
+        "title": "Regierungsforstrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Ziegler Rudolf Regierungsforstrat"
+      },
+      {
+        "name": "Zimmermann Hubert",
+        "role": "",
+        "title": "Regierungsforstrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Zimmermann Hubert Regierungsforstrat"
+      },
+      {
+        "name": "Schießl Josef",
+        "role": "Geschäftsleiter",
+        "title": "Rechnungsrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Schießl Josef Rechnungsrat, Geschäftsleiter"
+      },
+      {
+        "name": "Eberlein Oskar",
+        "role": "",
+        "title": "Rechnungsrat",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Eberlein Oskar Rechnungsrat"
+      },
+      {
+        "name": "Weiß Max",
+        "role": "",
+        "title": "Rechnungsoberinspektor",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Weiß Max Rechnungsoberinspektor"
+      },
+      {
+        "name": "Steinberger Josef",
+        "role": "",
+        "title": "Rechnungsoberinsp.",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Steinberger Josef Rechnungsoberinsp."
+      },
+      {
+        "name": "Probst Benedikt",
+        "role": "",
+        "title": "Rechnungsoberinspektor",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Probst Benedikt Rechnungsoberinspektor"
+      },
+      {
+        "name": "Breitenbach Max",
+        "role": "",
+        "title": "Rechnungsoberinsp.",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Breitenbach Max Rechnungsoberinsp."
+      },
+      {
+        "name": "Jäger Albert",
+        "role": "",
+        "title": "Rechnungsoberinspektor",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Jäger Albert Rechnungsoberinspektor"
+      },
+      {
+        "name": "Stumpf Artur",
+        "role": "",
+        "title": "Rechnungsoberinsp.",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Stumpf Artur Rechnungsoberinsp."
+      },
+      {
+        "name": "Högner Anton",
+        "role": "",
+        "title": "Rechnungsinspektor",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Högner Anton Rechnungsinspektor"
+      },
+      {
+        "name": "Köppel Adolf",
+        "role": "",
+        "title": "Rechnungsinspektor",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Köppel Adolf Rechnungsinspektor"
+      },
+      {
+        "name": "Zimmermann Josef",
+        "role": "",
+        "title": "Rechnungsinsp.",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Zimmermann Josef Rechnungsinsp."
+      },
+      {
+        "name": "Goß Josef",
+        "role": "",
+        "title": "Rechnungsinspektor",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Gof Josef Rechnungsinspektor"
+      },
+      {
+        "name": "Platiel Walter",
+        "role": "",
+        "title": "Verwaltungssekretär",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Platiel Walter Verwaltungssekretär"
+      },
+      {
+        "name": "Eder Rupert",
+        "role": "Abtlg.-Kommandeur",
+        "title": "Oberstleutnant der Gendarmerie",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Eder Rupert Oberstleutnant der Gendarmerie und Abtlg.-Kommandeur"
+      },
+      {
+        "name": "Gerbel Ferdinand",
+        "role": "",
+        "title": "Hauptmann der Gendarmerie",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Gerbel Ferdinand Hauptmann der Gendarmerie"
+      },
+      {
+        "name": "Weigert Hans",
+        "role": "",
+        "title": "Hauptmann der Gendarmerie",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Weigert Hans Hauptmann der Gendarmerie"
+      },
+      {
+        "name": "Falkenberg Harold",
+        "role": "",
+        "title": "Hauptmann der Gendarmerie",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Falkenberg Harold Hauptmann der Gendarmerie"
+      },
+      {
+        "name": "Schurath Georg",
+        "role": "",
+        "title": "Gendarmerie-Insp.",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Schurath Georg Gendarmerie-Insp."
+      },
+      {
+        "name": "Hecht Georg",
+        "role": "",
+        "title": "Gendarmerie-Inspektor",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Hecht Georg Gendarmerie-Inspektor"
+      },
+      {
+        "name": "Basold Georg",
+        "role": "",
+        "title": "Gendarmerie-Inspektor",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Basold Georg Gendarmerie-Inspektor"
+      },
+      {
+        "name": "Heindl Josef",
+        "role": "",
+        "title": "Gendarmerie-Inspektor",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Heindl Josef Gendarmerie-Inspektor"
+      },
+      {
+        "name": "Böckl Michael",
+        "role": "",
+        "title": "Gendarmerie-Inspektor",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Böckl Michael Gendarmerie-Inspektor"
+      },
+      {
+        "name": "Buch Adam",
+        "role": "",
+        "title": "Gendarmerie-Inspektor",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Buch Adam Gendarmerie-Inspektor"
+      },
+      {
+        "name": "Bachinger Otto",
+        "role": "",
+        "title": "Gendarmerie-Sekret.",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Bachinger Otto Gendarmerie-Sekret."
+      },
+      {
+        "name": "Wießner Karl",
+        "role": "",
+        "title": "Gendarmerie-Sekretär",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Wießner Karl Gendarmerie-Sekretär"
+      },
+      {
+        "name": "Seider Albert",
+        "role": "",
+        "title": "Gendarmerie-Oberwachtmeister",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Seider Albert Gendarmerie-Oberwachtmeister"
+      },
+      {
+        "name": "Stahl Xaver",
+        "role": "",
+        "title": "Amtsoffiziant",
+        "address": "Bismarckplatz 1",
+        "institution_path": [
+          "Kommando der Gendarmerie- Abteilung bei der Regierung [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Stahl Xaver Amtsoffiziant"
+      },
+      {
+        "name": "Bertram Friedrich",
+        "role": "",
+        "title": "Oberregierungsrat",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Gewerbeaufsicht"
+        ],
+        "continued": false,
+        "raw_entry": "Bertram Friedrich Oberregierungsrat"
+      },
+      {
+        "name": "Stallechner Josef",
+        "role": "",
+        "title": "Regierungsgewerberat 1. Klasse",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Gewerbeaufsicht"
+        ],
+        "continued": false,
+        "raw_entry": "Stallechner Josef Regierungsgewerberat 1. Klasse"
+      },
+      {
+        "name": "Langfeld Josef",
+        "role": "",
+        "title": "Gewerbeinspektor",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Gewerbeaufsicht"
+        ],
+        "continued": false,
+        "raw_entry": "Langfeld Josef Gewerbeinspektor"
+      },
+      {
+        "name": "Hüttner Matthäus",
+        "role": "",
+        "title": "Gewerbeinspektor",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Gewerbeaufsicht"
+        ],
+        "continued": false,
+        "raw_entry": "Hüttner Matthäus Gewerbeinspektor"
+      },
+      {
+        "name": "Panzer Ida",
+        "role": "",
+        "title": "Gewerbekommissärin",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Gewerbeaufsicht"
+        ],
+        "continued": false,
+        "raw_entry": "Panzer Ida Gewerbekommissärin"
+      },
+      {
+        "name": "Schön Ludwig",
+        "role": "",
+        "title": "Gewerbeaufsichtshilfsassistent",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Gewerbeaufsicht"
+        ],
+        "continued": false,
+        "raw_entry": "Schön Ludwig Gewerbeaufsichtshilfsassistent"
+      },
+      {
+        "name": "Graf Josef",
+        "role": "",
+        "title": "Kanzleisekretär",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Gewerbeaufsicht"
+        ],
+        "continued": false,
+        "raw_entry": "Graf Josef Kanzleisekretär"
+      },
+      {
+        "name": "Merz Karl von",
+        "role": "Leiter",
+        "title": "Oberregierungsrat",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Merz Karl von Oberregierungsrat, Leiter"
+      },
+      {
+        "name": "Voraus Franz",
+        "role": "",
+        "title": "Rechnungsinspektor",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Voraus Franz Rechnungsinspektor"
+      },
+      {
+        "name": "Kormann Anton",
+        "role": "",
+        "title": "Verwaltungsinsp.",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Kormann Anton Verwaltungsinsp."
+      },
+      {
+        "name": "Riedl Josef",
+        "role": "",
+        "title": "Verwaltungsinspektor",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Riedl Josef Verwaltungsinspektor"
+      },
+      {
+        "name": "Hahn Andreas",
+        "role": "",
+        "title": "Verwaltungsinspektor",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Hahn Andreas Verwaltungsinspektor"
+      },
+      {
+        "name": "Röscheisen Karl",
+        "role": "",
+        "title": "Verwaltungsinspekt.",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Röscheisen Karl Verwaltungsinspekt."
+      },
+      {
+        "name": "Albrecht Paul",
+        "role": "",
+        "title": "Kanzleiobersekretär",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Albrecht Paul Kanzleiobersekretär"
+      },
+      {
+        "name": "Wolf Anna",
+        "role": "",
+        "title": "Kanzleiassistentin",
+        "address": "Obermünsterstraße 16",
+        "institution_path": [
+          "Kreisfürsorgestelle für Kriegs- beschädigte und Kriegshinter- [redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Wolf Anna Kanzleiassistentin"
+      }
+    ]
+  }
+}

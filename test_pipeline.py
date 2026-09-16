@@ -1,74 +1,40 @@
-"""Run with python -m unittest -v; entirely synthetic and offline."""
-import tempfile
+"""Offline source-to-decision check: python -m unittest -v."""
+import copy
 import unittest
-from pathlib import Path
-
-from linkage import candidates, evaluate, extract, find_matches, normalise, read_csv
-from synthetic import make_dataset
-
-
-class PipelineChecks(unittest.TestCase):
-    def test_end_to_end_and_provenance(self):
-        with tempfile.TemporaryDirectory() as temp:
-            root = make_dataset(temp)
-            records, issues = extract(root / "pages")
-            self.assertEqual((len(records), len(issues)), (320, 16))
-            for row in records:
-                line = (root / "pages" / row["source_file"]).read_text(encoding="utf-8").splitlines()[row["source_line"] - 1]
-                self.assertEqual(row["raw_text"], line)
-            pairs = candidates(records)
-            decisions = find_matches(records, pairs)
-            truth = read_csv(root / "truth.csv")
-            metrics = evaluate(decisions, pairs, truth)
-            self.assertEqual((metrics["baseline"], metrics["true_links"]), (160, 128))
-            self.assertEqual(metrics["accepted"] + metrics["review"] + metrics["unmatched"], 160)
-            # Known migrants make within-town blocking incomplete, independent of scoring.
-            self.assertEqual(metrics["candidate_recall"], 112 / 128)
-            accepted = [r for r in decisions if r["status"] == "accepted"]
-            self.assertEqual(len(accepted), len({r["right_id"] for r in accepted}))
-            self.assertGreater(len(accepted), 0)
-            self.assertGreater(metrics["review"], 0)
-            truth_map = {r["left_id"]: r["right_id"] for r in truth}
-            correct = sum(r["right_id"] == truth_map[r["left_id"]] for r in accepted)
-            self.assertEqual(metrics["precision"], correct / len(accepted))
-            self.assertEqual(metrics["recall"], correct / 128)
-            self.assertEqual(metrics["coverage"], len(accepted) / 160)
-            # Reordering records/candidates cannot resolve a tie differently.
-            reversed_decisions = find_matches(list(reversed(records)), list(reversed(pairs)))
-            self.assertEqual({r["left_id"]: r for r in decisions}, {r["left_id"]: r for r in reversed_decisions})
-            with self.assertRaises(ValueError):
-                candidates(records + [records[0]])
-            with self.assertRaises(ValueError):
-                find_matches(records, pairs + [pairs[0]])
-            with self.assertRaises(ValueError):
-                find_matches(records, pairs, threshold=float("nan"))
-            with self.assertRaises(ValueError):
-                evaluate(decisions[1:], pairs, truth)
-            # A distinct real person with indistinguishable evidence stays unresolved.
-            twins = [r for r in records if r["given"] == "emil" and r["surname"] == "meyer" and not r["birth"]]
-            tied_ids = {r["record_id"] for r in twins if r["year"] == 1920}
-            self.assertTrue(all(r["status"] != "accepted" for r in find_matches(records, pairs, .55, 0) if r["left_id"] in tied_ids))
-            no_links = find_matches(records, [], threshold=1.)
-            self.assertIsNone(evaluate(no_links, [], truth)["precision"])
-            self.assertEqual(evaluate(no_links, [], truth)["recall"], 0.)
-            before = {p.name: p.read_bytes() for p in (root / "pages").glob("*.txt")}
-            self.assertTrue(all(b"\r" not in content for content in before.values()))
-            make_dataset(root)
-            self.assertEqual(before, {p.name: p.read_bytes() for p in (root / "pages").glob("*.txt")})
-
-    def test_missingness_and_rejections(self):
-        self.assertEqual(normalise("Müller"), normalise("Mueller"))
-        with tempfile.TemporaryDirectory() as temp:
-            page = Path(temp) / "example.txt"
-            page.write_text("SYNTHETIC\nMunicipality: Testtown\nYear: 1920\n\n"
-                            "01 | Meyer, Anna | b. ? | clerk | ?\n"
-                            "02 | Meyer, Otto | b. 2010 | clerk | ?\n"
-                            "03 | , | b. 1880 | clerk | ?\n", encoding="utf-8")
-            records, issues = extract(temp)
-            self.assertEqual(len(records), 1)
-            self.assertEqual(records[0]["birth"], "")
-            self.assertEqual({r["reason"] for r in issues}, {"invalid_birth_year", "missing_name"})
+from linkage import extract,select_anchors,candidate_pairs,find_matches,parse_name,given_evidence
+from ocr import ROOT,read_page,validate
+from run import read_csv
 
 
-if __name__ == "__main__":
+class PipelineCheck(unittest.TestCase):
+    def test_reviewed_cases_and_abstention(self):
+        records,pages=extract()  # Verifies all source/cache hashes and schemas.
+        self.assertEqual(len(pages),4)
+        self.assertEqual(len({r['record_id'] for r in records}),len(records))
+        anchors=select_anchors(records,read_csv(ROOT/'data/anchors.csv'))
+        pairs=candidate_pairs(anchors,records)
+        decisions=find_matches(anchors,pairs)
+        a,b=decisions
+        self.assertEqual((a['status'],a['best_candidate']),('accepted','Aug. Huber'))
+        self.assertEqual((b['status'],b['reason']),('no_link','given_name_conflict'))
+        self.assertEqual(b['right_id'],'')
+        self.assertEqual(decisions,find_matches(anchors,list(reversed(pairs))))
+        winner=next(p for p in pairs if p['right_name']=='Aug. Huber')
+        tied=copy.deepcopy(winner)
+        tied['right_id']+='-other-person'
+        self.assertEqual(find_matches(anchors,pairs+[tied],margin=0)[0]['status'],'review')
+        # Competing anchors cannot both acquire the same later record.
+        rival=copy.deepcopy(anchors[0]); rival['case_id']='C'; rival['record_id']+='-rival'
+        competition=copy.deepcopy(winner); competition['case_id']='C'; competition['left_id']=rival['record_id']
+        competing=find_matches(anchors+[rival],pairs+[competition])
+        self.assertTrue(all(d['status']!='accepted' for d in competing if d['case_id'] in ('A','C')))
+        self.assertEqual(parse_name('Huber August','surname_first'),parse_name('August Huber','given_first'))
+        self.assertEqual(given_evidence('august','aug'),('abbreviation',.8))
+        self.assertEqual(given_evidence('rupert','roman'),('conflict',0.))
+        with self.assertRaises(ValueError): find_matches(anchors,pairs+[pairs[0]])
+        with self.assertRaises(ValueError): find_matches(anchors,pairs,threshold=float('nan'))
+        with self.assertRaises(ValueError): validate({'entries':[]})
+
+
+if __name__=='__main__':
     unittest.main()

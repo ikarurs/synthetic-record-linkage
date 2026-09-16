@@ -1,0 +1,387 @@
+{
+  "image_sha256": "8401ebf06c5a5e7669587c275450740014d599a3246ceb4299e9d5ca624b2ca6",
+  "prompt_sha256": "74a1e329ba96b67b86e11f969348f4b7b9e1b32d9f059cbd29f833e434c62661",
+  "schema_sha256": "5de6361cf2df2eecc68a24e5b100002f4bb137ac3803768e88fa55bccdab0ec0",
+  "config_sha256": "c1e1c15da6e826406d1bb46f6a7939effb11bfe865bd23c9110e57fd11e0770b",
+  "model": "gemini-3.5-flash",
+  "captured_utc": "2026-09-16T14:36:38.073382+00:00",
+  "usage": {
+    "promptTokenCount": 1379,
+    "candidatesTokenCount": 3814,
+    "totalTokenCount": 5193,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 294
+      },
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1085
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "generation_config": {
+    "maxOutputTokens": 32768,
+    "thinkingConfig": {
+      "thinkingLevel": "low"
+    },
+    "responseMimeType": "application/json",
+    "responseJsonSchema": {
+      "type": "object",
+      "properties": {
+        "transcription": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "empty_result_reason": {
+          "type": "string"
+        },
+        "active_hierarchy_at_end": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "institution_path": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "continued": {
+                "type": "boolean"
+              },
+              "raw_entry": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "role",
+              "title",
+              "address",
+              "institution_path",
+              "continued",
+              "raw_entry"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "transcription",
+        "confidence",
+        "empty_result_reason",
+        "active_hierarchy_at_end",
+        "entries"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "raw_response_text": "{\n  \"transcription\": \"(im [redacted]\\nHopfensberger Alois Standesbeamter\\nu. Wohlfahrtskontrolleur (Dienst=\\nstunden nur nachm. v. 5-6 Uhr)\\n[phone] 88 Nebenstelle 89\\n\\nSteuer- und Gebührenamt\\nMoser Karl Verw.-Oberinspektor\\n([phone] 88 Nebenstelle 27)\\n\\nVersicherungsamt und Kranken-\\nhausbüro\\nde Temple Josef Verw.-Sekretär\\n([phone] 88 Nebenstelle 56)\\n\\nStädt. Bezirksarzt\\nSeligentalerstraße 36\\nFiedler Heinrich Dr. Bezirksarzt\\n[phone] 2054\\n\\nStädt. Bezirkstierarzt\\nTayler Friedrich Dr. Veterinärrat\\n[phone] 88 (Nbst. 60), 88 (Nbst. 61)\\n\\nStädt. Schlachthof\\nmit bakteriologischer Fleischunter=\\nsuchungsstelle\\nDirektion: Tayler Friedrich Dr.\\nVeterinärrat [phone] während der\\nDienststunden: (88 Nbst. 60, 88\\nNbst. 62) außerhalb der Dienst=\\nstunden (88 Nbst. 61)\\nWeikl Anton Dr. städt. Amtstierarzt\\nStethaimerstraße 29/2 [phone] 88\\nNebenstelle 62\\n\\nStadtbauamt\\nBauhofstraße 6 ([phone] 88 Nbst. 43)\\nSimon Heinz Beigeordneter und\\nStadtbaurat ([phone] 88 Nbst. 40)\\nGöckel Werner städt. Baurat\\n([phone] 88 Nbst. 45)\\nHüttner Franz Bauamtmann ([phone] 88\\nNebenstelle 42)\\nHochrein Theodor Stadtbaumeister\\n([phone] 88 Nebenstelle 41)\\nSchumann Max Verwaltungsober=\\nassistent\\nAmann Anton Straßenoberaufseher\\n\\nStadtgarten\\nHofgarten 1\\nMörtlbauer August Stadtgarten=\\ndirektor ([phone] 88 Nebenstelle 94)\\n\\nStadtsparkasse\\nNeustadt 467\\nBarnerßoi Georg Sparkassendirektor\\n[phone] 88 Nebenstelle 25\\nHuber Ludwig Verw.-Oberinspektor\\n\\nStädtische Werke\\nBauhofstraße 4\\nLeitung: z. Zt. unbesetzt\\nLey Otto Oberingenieur ([phone] 88\\nNebenstelle 33)\\nKandler Leo Oberingenieur ([phone] 88\\nNebenstelle 32)\\nHeilmeier Josef Verwaltungsober=\\ninspektor [phone] 88 Nebenstelle 31\\n\\nStädt. Gaswerk\\nVerwaltung und Betrieb Bauhof=\\nstraße 4 ([phone] 88 Nebenstelle 33)\\n\\nStädt. Elektrizitätswerk\\nVerwaltung: Bauhofstraße 4 ([phone] 88\\nNebenstelle 32)\\nBetriebe: Dieselwerk Christoph=\\nDorner-Str. 758 ([phone] 88 Nbst. 44)\\nKraftwerk Ludwigswehr Badstr. 17\\n([phone] 88 Nebenstelle 47)\\nKraftwerk Maxwehr Isargestade 746\\n([phone] 88 Nebenstelle 46)\\n\\nStädt. Wasserwerk\\nVerwaltung: Bauhofstraße 4\\n([phone] 88 Nebenstelle 33)\\nBetrieb: Münchnerstraße 14\\n\\nStädt. Straßenbahn\\nVerwaltung: Bauhofstraße 4 ([phone] 88\\nNebenstelle 66)\\nBetrieb: Seligentalerstraße 63\\n\\nStädt. Brausebad\\nVerwaltung: Bauhofstraße 4\\n([phone] 88 Nebenstelle 34)\\nBad: Bauhofstraße 4\\n\\nStädt. Friedhof\\nFriedhofstraße 1\\nSteigerwald Karl Friedhofoberauf=\\nseher ([phone] 88 Nebenstelle 85)\\n\\n[redacted]\\nGrädler Hans Bindermeister Rödl=\\nstraße 210\\n\\nFriedhof Berg\\nEngelhardt Josef Totengräber Adel=\\nmannstraße 101\\n\\nFürsorge- und Jugendamt\\nSpiegelgasse 207\\nHuber August Stadtamtmann\\n([phone] 88 Nebenstelle 28)\\n\\nHl.-Geist-Spital-Forst-Verwaltung\\nAltstadt 97\\nBurkart Adolf Stadtoberförster\\n\\nStädt. Schwimmschule\\nKlößlmüllerstraße 32\\nDreier Ludwig Bademeister [phone] 88\\nNebenstelle 87\",\n  \"confidence\": 0.98,\n  \"empty_result_reason\": \"\",\n  \"active_hierarchy_at_end\": [\n    \"Städt. Schwimmschule\"\n  ],\n  \"entries\": [\n    {\n      \"name\": \"Hopfensberger Alois\",\n      \"role\": \"Standesbeamter u. Wohlfahrtskontrolleur\",\n      \"title\": \"\",\n      \"address\": \"\",\n      \"institution_path\": [],\n      \"continued\": true,\n      \"raw_entry\": \"Hopfensberger Alois Standesbeamter u. Wohlfahrtskontrolleur (Dienst= stunden nur nachm. v. 5-6 Uhr) [phone] 88 Nebenstelle 89\"\n    },\n    {\n      \"name\": \"Moser Karl\",\n      \"role\": \"Verw.-Oberinspektor\",\n      \"title\": \"\",\n      \"address\": \"\",\n      \"institution_path\": [\n        \"Steuer- und Gebührenamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Moser Karl Verw.-Oberinspektor ([phone] 88 Nebenstelle 27)\"\n    },\n    {\n      \"name\": \"de Temple Josef\",\n      \"role\": \"Verw.-Sekretär\",\n      \"title\": \"\",\n      \"address\": \"\",\n      \"institution_path\": [\n        \"Versicherungsamt und Kranken- hausbüro\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"de Temple Josef Verw.-Sekretär ([phone] 88 Nebenstelle 56)\"\n    },\n    {\n      \"name\": \"Fiedler Heinrich\",\n      \"role\": \"Bezirksarzt\",\n      \"title\": \"Dr.\",\n      \"address\": \"Seligentalerstraße 36\",\n      \"institution_path\": [\n        \"Städt. Bezirksarzt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Fiedler Heinrich Dr. Bezirksarzt [phone] 2054\"\n    },\n    {\n      \"name\": \"Tayler Friedrich\",\n      \"role\": \"Veterinärrat\",\n      \"title\": \"Dr.\",\n      \"address\": \"\",\n      \"institution_path\": [\n        \"Städt. Bezirkstierarzt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Tayler Friedrich Dr. Veterinärrat [phone] 88 (Nbst. 60), 88 (Nbst. 61)\"\n    },\n    {\n      \"name\": \"Tayler Friedrich\",\n      \"role\": \"Direktion\",\n      \"title\": \"Dr. Veterinärrat\",\n      \"address\": \"\",\n      \"institution_path\": [\n        \"Städt. Schlachthof mit bakteriologischer Fleischunter- suchungsstelle\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Direktion: Tayler Friedrich Dr. Veterinärrat [phone] während der Dienststunden: (88 Nbst. 60, 88 Nbst. 62) außerhalb der Dienst- stunden (88 Nbst. 61)\"\n    },\n    {\n      \"name\": \"Weikl Anton\",\n      \"role\": \"städt. Amtstierarzt\",\n      \"title\": \"Dr.\",\n      \"address\": \"Stethaimerstraße 29/2\",\n      \"institution_path\": [\n        \"Städt. Schlachthof mit bakteriologischer Fleischunter- suchungsstelle\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Weikl Anton Dr. städt. Amtstierarzt Stethaimerstraße 29/2 [phone] 88 Nebenstelle 62\"\n    },\n    {\n      \"name\": \"Simon Heinz\",\n      \"role\": \"Beigeordneter und Stadtbaurat\",\n      \"title\": \"\",\n      \"address\": \"Bauhofstraße 6\",\n      \"institution_path\": [\n        \"Stadtbauamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Simon Heinz Beigeordneter und Stadtbaurat ([phone] 88 Nbst. 40)\"\n    },\n    {\n      \"name\": \"Göckel Werner\",\n      \"role\": \"städt. Baurat\",\n      \"title\": \"\",\n      \"address\": \"Bauhofstraße 6\",\n      \"institution_path\": [\n        \"Stadtbauamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Göckel Werner städt. Baurat ([phone] 88 Nbst. 45)\"\n    },\n    {\n      \"name\": \"Hüttner Franz\",\n      \"role\": \"Bauamtmann\",\n      \"title\": \"\",\n      \"address\": \"Bauhofstraße 6\",\n      \"institution_path\": [\n        \"Stadtbauamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Hüttner Franz Bauamtmann ([phone] 88 Nebenstelle 42)\"\n    },\n    {\n      \"name\": \"Hochrein Theodor\",\n      \"role\": \"Stadtbaumeister\",\n      \"title\": \"\",\n      \"address\": \"Bauhofstraße 6\",\n      \"institution_path\": [\n        \"Stadtbauamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Hochrein Theodor Stadtbaumeister ([phone] 88 Nebenstelle 41)\"\n    },\n    {\n      \"name\": \"Schumann Max\",\n      \"role\": \"Verwaltungsober- assistent\",\n      \"title\": \"\",\n      \"address\": \"Bauhofstraße 6\",\n      \"institution_path\": [\n        \"Stadtbauamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Schumann Max Verwaltungsober- assistent\"\n    },\n    {\n      \"name\": \"Amann Anton\",\n      \"role\": \"Straßenoberaufseher\",\n      \"title\": \"\",\n      \"address\": \"Bauhofstraße 6\",\n      \"institution_path\": [\n        \"Stadtbauamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Amann Anton Straßenoberaufseher\"\n    },\n    {\n      \"name\": \"Mörtlbauer August\",\n      \"role\": \"Stadtgartendirektor\",\n      \"title\": \"\",\n      \"address\": \"Hofgarten 1\",\n      \"institution_path\": [\n        \"Stadtgarten\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Mörtlbauer August Stadtgarten- direktor ([phone] 88 Nebenstelle 94)\"\n    },\n    {\n      \"name\": \"Barnerßoi Georg\",\n      \"role\": \"Sparkassendirektor\",\n      \"title\": \"\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\n        \"Stadtsparkasse\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Barnerßoi Georg Sparkassendirektor [phone] 88 Nebenstelle 25\"\n    },\n    {\n      \"name\": \"Huber Ludwig\",\n      \"role\": \"Verw.-Oberinspektor\",\n      \"title\": \"\",\n      \"address\": \"Neustadt 467\",\n      \"institution_path\": [\n        \"Stadtsparkasse\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Huber Ludwig Verw.-Oberinspektor\"\n    },\n    {\n      \"name\": \"Ley Otto\",\n      \"role\": \"Oberingenieur\",\n      \"title\": \"\",\n      \"address\": \"Bauhofstraße 4\",\n      \"institution_path\": [\n        \"Städtische Werke\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Ley Otto Oberingenieur ([phone] 88 Nebenstelle 33)\"\n    },\n    {\n      \"name\": \"Kandler Leo\",\n      \"role\": \"Oberingenieur\",\n      \"title\": \"\",\n      \"address\": \"Bauhofstraße 4\",\n      \"institution_path\": [\n        \"Städtische Werke\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Kandler Leo Oberingenieur ([phone] 88 Nebenstelle 32)\"\n    },\n    {\n      \"name\": \"Heilmeier Josef\",\n      \"role\": \"Verwaltungsober- inspektor\",\n      \"title\": \"\",\n      \"address\": \"Bauhofstraße 4\",\n      \"institution_path\": [\n        \"Städtische Werke\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Heilmeier Josef Verwaltungsober- inspektor [phone] 88 Nebenstelle 31\"\n    },\n    {\n      \"name\": \"Steigerwald Karl\",\n      \"role\": \"Friedhofoberauf- seher\",\n      \"title\": \"\",\n      \"address\": \"Friedhofstraße 1\",\n      \"institution_path\": [\n        \"Städt. Friedhof\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Steigerwald Karl Friedhofoberauf- seher ([phone] 88 Nebenstelle 85)\"\n    },\n    {\n      \"name\": \"Grädler Hans\",\n      \"role\": \"Bindermeister\",\n      \"title\": \"\",\n      \"address\": \"Rödlstraße 210\",\n      \"institution_path\": [\n        \"[redacted]\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Grädler Hans Bindermeister Rödl- straße 210\"\n    },\n    {\n      \"name\": \"Engelhardt Josef\",\n      \"role\": \"Totengräber\",\n      \"title\": \"\",\n      \"address\": \"Adelmannstraße 101\",\n      \"institution_path\": [\n        \"Friedhof Berg\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Engelhardt Josef Totengräber Adel- mannstraße 101\"\n    },\n    {\n      \"name\": \"Huber August\",\n      \"role\": \"Stadtamtmann\",\n      \"title\": \"\",\n      \"address\": \"Spiegelgasse 207\",\n      \"institution_path\": [\n        \"Fürsorge- und Jugendamt\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Huber August Stadtamtmann ([phone] 88 Nebenstelle 28)\"\n    },\n    {\n      \"name\": \"Burkart Adolf\",\n      \"role\": \"Stadtoberförster\",\n      \"title\": \"\",\n      \"address\": \"Altstadt 97\",\n      \"institution_path\": [\n        \"Hl.-Geist-Spital-Forst-Verwaltung\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Burkart Adolf Stadtoberförster\"\n    },\n    {\n      \"name\": \"Dreier Ludwig\",\n      \"role\": \"Bademeister\",\n      \"title\": \"\",\n      \"address\": \"Klößlmüllerstraße 32\",\n      \"institution_path\": [\n        \"Städt. Schwimmschule\"\n      ],\n      \"continued\": false,\n      \"raw_entry\": \"Dreier Ludwig Bademeister [phone] 88 Nebenstelle 87\"\n    }\n  ]\n}",
+  "page": {
+    "transcription": "(im [redacted]\nHopfensberger Alois Standesbeamter\nu. Wohlfahrtskontrolleur (Dienst=\nstunden nur nachm. v. 5-6 Uhr)\n[phone] 88 Nebenstelle 89\n\nSteuer- und Gebührenamt\nMoser Karl Verw.-Oberinspektor\n([phone] 88 Nebenstelle 27)\n\nVersicherungsamt und Kranken-\nhausbüro\nde Temple Josef Verw.-Sekretär\n([phone] 88 Nebenstelle 56)\n\nStädt. Bezirksarzt\nSeligentalerstraße 36\nFiedler Heinrich Dr. Bezirksarzt\n[phone] 2054\n\nStädt. Bezirkstierarzt\nTayler Friedrich Dr. Veterinärrat\n[phone] 88 (Nbst. 60), 88 (Nbst. 61)\n\nStädt. Schlachthof\nmit bakteriologischer Fleischunter=\nsuchungsstelle\nDirektion: Tayler Friedrich Dr.\nVeterinärrat [phone] während der\nDienststunden: (88 Nbst. 60, 88\nNbst. 62) außerhalb der Dienst=\nstunden (88 Nbst. 61)\nWeikl Anton Dr. städt. Amtstierarzt\nStethaimerstraße 29/2 [phone] 88\nNebenstelle 62\n\nStadtbauamt\nBauhofstraße 6 ([phone] 88 Nbst. 43)\nSimon Heinz Beigeordneter und\nStadtbaurat ([phone] 88 Nbst. 40)\nGöckel Werner städt. Baurat\n([phone] 88 Nbst. 45)\nHüttner Franz Bauamtmann ([phone] 88\nNebenstelle 42)\nHochrein Theodor Stadtbaumeister\n([phone] 88 Nebenstelle 41)\nSchumann Max Verwaltungsober=\nassistent\nAmann Anton Straßenoberaufseher\n\nStadtgarten\nHofgarten 1\nMörtlbauer August Stadtgarten=\ndirektor ([phone] 88 Nebenstelle 94)\n\nStadtsparkasse\nNeustadt 467\nBarnerßoi Georg Sparkassendirektor\n[phone] 88 Nebenstelle 25\nHuber Ludwig Verw.-Oberinspektor\n\nStädtische Werke\nBauhofstraße 4\nLeitung: z. Zt. unbesetzt\nLey Otto Oberingenieur ([phone] 88\nNebenstelle 33)\nKandler Leo Oberingenieur ([phone] 88\nNebenstelle 32)\nHeilmeier Josef Verwaltungsober=\ninspektor [phone] 88 Nebenstelle 31\n\nStädt. Gaswerk\nVerwaltung und Betrieb Bauhof=\nstraße 4 ([phone] 88 Nebenstelle 33)\n\nStädt. Elektrizitätswerk\nVerwaltung: Bauhofstraße 4 ([phone] 88\nNebenstelle 32)\nBetriebe: Dieselwerk Christoph=\nDorner-Str. 758 ([phone] 88 Nbst. 44)\nKraftwerk Ludwigswehr Badstr. 17\n([phone] 88 Nebenstelle 47)\nKraftwerk Maxwehr Isargestade 746\n([phone] 88 Nebenstelle 46)\n\nStädt. Wasserwerk\nVerwaltung: Bauhofstraße 4\n([phone] 88 Nebenstelle 33)\nBetrieb: Münchnerstraße 14\n\nStädt. Straßenbahn\nVerwaltung: Bauhofstraße 4 ([phone] 88\nNebenstelle 66)\nBetrieb: Seligentalerstraße 63\n\nStädt. Brausebad\nVerwaltung: Bauhofstraße 4\n([phone] 88 Nebenstelle 34)\nBad: Bauhofstraße 4\n\nStädt. Friedhof\nFriedhofstraße 1\nSteigerwald Karl Friedhofoberauf=\nseher ([phone] 88 Nebenstelle 85)\n\n[redacted]\nGrädler Hans Bindermeister Rödl=\nstraße 210\n\nFriedhof Berg\nEngelhardt Josef Totengräber Adel=\nmannstraße 101\n\nFürsorge- und Jugendamt\nSpiegelgasse 207\nHuber August Stadtamtmann\n([phone] 88 Nebenstelle 28)\n\nHl.-Geist-Spital-Forst-Verwaltung\nAltstadt 97\nBurkart Adolf Stadtoberförster\n\nStädt. Schwimmschule\nKlößlmüllerstraße 32\nDreier Ludwig Bademeister [phone] 88\nNebenstelle 87",
+    "confidence": 0.98,
+    "empty_result_reason": "",
+    "active_hierarchy_at_end": [
+      "Städt. Schwimmschule"
+    ],
+    "entries": [
+      {
+        "name": "Hopfensberger Alois",
+        "role": "Standesbeamter u. Wohlfahrtskontrolleur",
+        "title": "",
+        "address": "",
+        "institution_path": [],
+        "continued": true,
+        "raw_entry": "Hopfensberger Alois Standesbeamter u. Wohlfahrtskontrolleur (Dienst= stunden nur nachm. v. 5-6 Uhr) [phone] 88 Nebenstelle 89"
+      },
+      {
+        "name": "Moser Karl",
+        "role": "Verw.-Oberinspektor",
+        "title": "",
+        "address": "",
+        "institution_path": [
+          "Steuer- und Gebührenamt"
+        ],
+        "continued": false,
+        "raw_entry": "Moser Karl Verw.-Oberinspektor ([phone] 88 Nebenstelle 27)"
+      },
+      {
+        "name": "de Temple Josef",
+        "role": "Verw.-Sekretär",
+        "title": "",
+        "address": "",
+        "institution_path": [
+          "Versicherungsamt und Kranken- hausbüro"
+        ],
+        "continued": false,
+        "raw_entry": "de Temple Josef Verw.-Sekretär ([phone] 88 Nebenstelle 56)"
+      },
+      {
+        "name": "Fiedler Heinrich",
+        "role": "Bezirksarzt",
+        "title": "Dr.",
+        "address": "Seligentalerstraße 36",
+        "institution_path": [
+          "Städt. Bezirksarzt"
+        ],
+        "continued": false,
+        "raw_entry": "Fiedler Heinrich Dr. Bezirksarzt [phone] 2054"
+      },
+      {
+        "name": "Tayler Friedrich",
+        "role": "Veterinärrat",
+        "title": "Dr.",
+        "address": "",
+        "institution_path": [
+          "Städt. Bezirkstierarzt"
+        ],
+        "continued": false,
+        "raw_entry": "Tayler Friedrich Dr. Veterinärrat [phone] 88 (Nbst. 60), 88 (Nbst. 61)"
+      },
+      {
+        "name": "Tayler Friedrich",
+        "role": "Direktion",
+        "title": "Dr. Veterinärrat",
+        "address": "",
+        "institution_path": [
+          "Städt. Schlachthof mit bakteriologischer Fleischunter- suchungsstelle"
+        ],
+        "continued": false,
+        "raw_entry": "Direktion: Tayler Friedrich Dr. Veterinärrat [phone] während der Dienststunden: (88 Nbst. 60, 88 Nbst. 62) außerhalb der Dienst- stunden (88 Nbst. 61)"
+      },
+      {
+        "name": "Weikl Anton",
+        "role": "städt. Amtstierarzt",
+        "title": "Dr.",
+        "address": "Stethaimerstraße 29/2",
+        "institution_path": [
+          "Städt. Schlachthof mit bakteriologischer Fleischunter- suchungsstelle"
+        ],
+        "continued": false,
+        "raw_entry": "Weikl Anton Dr. städt. Amtstierarzt Stethaimerstraße 29/2 [phone] 88 Nebenstelle 62"
+      },
+      {
+        "name": "Simon Heinz",
+        "role": "Beigeordneter und Stadtbaurat",
+        "title": "",
+        "address": "Bauhofstraße 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Simon Heinz Beigeordneter und Stadtbaurat ([phone] 88 Nbst. 40)"
+      },
+      {
+        "name": "Göckel Werner",
+        "role": "städt. Baurat",
+        "title": "",
+        "address": "Bauhofstraße 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Göckel Werner städt. Baurat ([phone] 88 Nbst. 45)"
+      },
+      {
+        "name": "Hüttner Franz",
+        "role": "Bauamtmann",
+        "title": "",
+        "address": "Bauhofstraße 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Hüttner Franz Bauamtmann ([phone] 88 Nebenstelle 42)"
+      },
+      {
+        "name": "Hochrein Theodor",
+        "role": "Stadtbaumeister",
+        "title": "",
+        "address": "Bauhofstraße 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Hochrein Theodor Stadtbaumeister ([phone] 88 Nebenstelle 41)"
+      },
+      {
+        "name": "Schumann Max",
+        "role": "Verwaltungsober- assistent",
+        "title": "",
+        "address": "Bauhofstraße 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Schumann Max Verwaltungsober- assistent"
+      },
+      {
+        "name": "Amann Anton",
+        "role": "Straßenoberaufseher",
+        "title": "",
+        "address": "Bauhofstraße 6",
+        "institution_path": [
+          "Stadtbauamt"
+        ],
+        "continued": false,
+        "raw_entry": "Amann Anton Straßenoberaufseher"
+      },
+      {
+        "name": "Mörtlbauer August",
+        "role": "Stadtgartendirektor",
+        "title": "",
+        "address": "Hofgarten 1",
+        "institution_path": [
+          "Stadtgarten"
+        ],
+        "continued": false,
+        "raw_entry": "Mörtlbauer August Stadtgarten- direktor ([phone] 88 Nebenstelle 94)"
+      },
+      {
+        "name": "Barnerßoi Georg",
+        "role": "Sparkassendirektor",
+        "title": "",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Stadtsparkasse"
+        ],
+        "continued": false,
+        "raw_entry": "Barnerßoi Georg Sparkassendirektor [phone] 88 Nebenstelle 25"
+      },
+      {
+        "name": "Huber Ludwig",
+        "role": "Verw.-Oberinspektor",
+        "title": "",
+        "address": "Neustadt 467",
+        "institution_path": [
+          "Stadtsparkasse"
+        ],
+        "continued": false,
+        "raw_entry": "Huber Ludwig Verw.-Oberinspektor"
+      },
+      {
+        "name": "Ley Otto",
+        "role": "Oberingenieur",
+        "title": "",
+        "address": "Bauhofstraße 4",
+        "institution_path": [
+          "Städtische Werke"
+        ],
+        "continued": false,
+        "raw_entry": "Ley Otto Oberingenieur ([phone] 88 Nebenstelle 33)"
+      },
+      {
+        "name": "Kandler Leo",
+        "role": "Oberingenieur",
+        "title": "",
+        "address": "Bauhofstraße 4",
+        "institution_path": [
+          "Städtische Werke"
+        ],
+        "continued": false,
+        "raw_entry": "Kandler Leo Oberingenieur ([phone] 88 Nebenstelle 32)"
+      },
+      {
+        "name": "Heilmeier Josef",
+        "role": "Verwaltungsober- inspektor",
+        "title": "",
+        "address": "Bauhofstraße 4",
+        "institution_path": [
+          "Städtische Werke"
+        ],
+        "continued": false,
+        "raw_entry": "Heilmeier Josef Verwaltungsober- inspektor [phone] 88 Nebenstelle 31"
+      },
+      {
+        "name": "Steigerwald Karl",
+        "role": "Friedhofoberauf- seher",
+        "title": "",
+        "address": "Friedhofstraße 1",
+        "institution_path": [
+          "Städt. Friedhof"
+        ],
+        "continued": false,
+        "raw_entry": "Steigerwald Karl Friedhofoberauf- seher ([phone] 88 Nebenstelle 85)"
+      },
+      {
+        "name": "Grädler Hans",
+        "role": "Bindermeister",
+        "title": "",
+        "address": "Rödlstraße 210",
+        "institution_path": [
+          "[redacted]"
+        ],
+        "continued": false,
+        "raw_entry": "Grädler Hans Bindermeister Rödl- straße 210"
+      },
+      {
+        "name": "Engelhardt Josef",
+        "role": "Totengräber",
+        "title": "",
+        "address": "Adelmannstraße 101",
+        "institution_path": [
+          "Friedhof Berg"
+        ],
+        "continued": false,
+        "raw_entry": "Engelhardt Josef Totengräber Adel- mannstraße 101"
+      },
+      {
+        "name": "Huber August",
+        "role": "Stadtamtmann",
+        "title": "",
+        "address": "Spiegelgasse 207",
+        "institution_path": [
+          "Fürsorge- und Jugendamt"
+        ],
+        "continued": false,
+        "raw_entry": "Huber August Stadtamtmann ([phone] 88 Nebenstelle 28)"
+      },
+      {
+        "name": "Burkart Adolf",
+        "role": "Stadtoberförster",
+        "title": "",
+        "address": "Altstadt 97",
+        "institution_path": [
+          "Hl.-Geist-Spital-Forst-Verwaltung"
+        ],
+        "continued": false,
+        "raw_entry": "Burkart Adolf Stadtoberförster"
+      },
+      {
+        "name": "Dreier Ludwig",
+        "role": "Bademeister",
+        "title": "",
+        "address": "Klößlmüllerstraße 32",
+        "institution_path": [
+          "Städt. Schwimmschule"
+        ],
+        "continued": false,
+        "raw_entry": "Dreier Ludwig Bademeister [phone] 88 Nebenstelle 87"
+      }
+    ]
+  }
+}

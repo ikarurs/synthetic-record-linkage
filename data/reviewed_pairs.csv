@@ -1,0 +1,3 @@
+case_id,later_page,target_name,reviewed_decision,evidence
+A,sample-a-after,Aug. Huber,same_person,Compatible abbreviated given name; same surname and municipal youth-welfare context; rank agrees.
+B,sample-b-after,Roman Eder,different_person,Same surname but conflicting given names and different administrative careers; no match found in the original roster review.
