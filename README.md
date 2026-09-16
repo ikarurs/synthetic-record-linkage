@@ -1,31 +1,41 @@
-# From archival pages to auditable personnel links
+# Tracing people and their positions across address books
 
-The wider research studies how administrative personnel persist or change through political transitions, and how that continuity relates to later economic outcomes. This example demonstrates the data construction needed to investigate that question: converting archival pages into structured records and auditable links between people.
+We want to **find the same people in different editions of historical address books and see whether their positions change**. For each person, we compare which public office they belong to and what role or rank is recorded in an earlier and a later book.
 
-**[Read the executed walkthrough](walkthrough.ipynb).** It follows two deliberately selected cases: an accepted identity and a rejected candidate. The four page excerpts are real; names and original printing remain visible while the city, exact years and source identifiers are concealed. The [separate outcome notebook](https://github.com/ikarurs/synthetic-record-linkage/blob/fictional-outcomes/outcomes.ipynb) uses entirely fictional municipal data to show how validated links could eventually support aggregation and outcome analysis.
+The address-book sections used here list public institutions and their staff, alongside names, job titles and duties. They are scanned pages, so we first use **OCR (optical character recognition)** to turn the printing into text and structured fields. We preserve the original wording so that each extracted name and position can be checked against the page.
+
+Before comparing positions, we have to establish whether two entries describe the same person. One book may print **Huber August**, while another uses **Aug. Huber**. Names can be abbreviated or reordered, and different people can share a surname. We therefore compare names together with ranks and office information, inspect competing possible matches, and record why a link is accepted or rejected.
+
+**[Read the executed walkthrough](walkthrough.ipynb).** This small example follows two selected cases from four real page excerpts: one where the evidence supports linking the entries, and one where a shared surname is misleading. It shows the printed pages, extracted fields, identity decisions and recorded positions side by side. Names remain visible; the city, exact years and source identifiers are concealed.
 
 ## What this example demonstrates
+
+An **entry** is one printed listing, not necessarily a distinct person. A **candidate pair** is an earlier and a later entry that might describe the same person. We call each of the two earlier entries chosen for the walkthrough an **anchor**.
 
 | Input or comparison | Scope |
 |---|---|
 | Redacted archival excerpts | 4 |
 | Extracted entries | 137: 77 earlier, 60 later |
-| Candidate generation | All earlier × later entries within the same neutral town |
-| Pairs passing the surname filter | 15, including 3 involving the two focal anchors |
+| Search for possible matches | Compare all 77 earlier entries with all 60 later entries from the same town, represented by a neutral label |
+| Pairs with sufficiently similar surnames | 15, including 3 involving the two selected anchors |
 | Decisions presented | 2 selected earlier entries |
 
-An **entry** is one printed occurrence, not necessarily a distinct person. An **anchor** is an earlier entry chosen for explanation. The excerpts are not complete municipal rosters. All 15 candidate pairs, including conflicting given names, contribute to competition; only the two anchors receive reported decisions.
+The excerpts are not complete lists of municipal staff. All 15 candidate pairs, including conflicting given names, contribute to competition; only the two anchors receive reported decisions.
 
 | Earlier entry | Later candidate | Illustrated decision |
 |---|---|---|
 | Huber August | Aug. Huber | Accepted: compatible abbreviation and rank/office evidence |
 | Eder Rupert | Roman Eder | Rejected: conflicting given names and different careers |
 
+For Huber, the earlier entry records the rank **Stadtamtmann**. The later entry records the same rank in abbreviated form and also describes his role as **Leiter und Amtsvormund**. Linking the entries lets us compare these descriptions of his position. A difference in what the books record does not by itself establish that his actual duties changed; that requires further evidence.
+
 The cases were chosen to contrast these situations, not sampled to estimate performance. They use previously recorded review judgements and the source evidence shown here. **The sample does not document the original reviewer, review date or additional corroboration.** Separately storing labels does not make this an independent validation exercise. The prior review reportedly found no later match for Rupert Eder; these excerpts only support inspecting and rejecting the displayed Roman Eder candidate.
+
+In the wider research, tracing people and their positions helps investigate how administrative personnel persist or change through political transitions, and how that continuity relates to later economic outcomes. The [separate outcome notebook](https://github.com/ikarurs/synthetic-record-linkage/blob/fictional-outcomes/outcomes.ipynb) uses entirely fictional data to illustrate how person links could eventually support municipal summaries and outcome analysis.
 
 ## See the process
 
-**Redacted page → saved OCR → comparable fields → excerpt-wide candidates → two-sided competition → decision → review comparison**
+**Scanned page → extracted names and positions → possible matches across books → compare alternatives → decide whether it is the same person → inspect the recorded positions**
 
 The first figure places the original printed detail beside its actual saved OCR fields. Read across the rows: name order changes, August becomes Aug., and the same rank lands in different role/title fields. Blue boxes are manually reviewed display windows, not OCR detections.
 
