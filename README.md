@@ -1,5 +1,7 @@
 # From archival pages to matched personnel
 
+**You are on the `fictional-outcomes` branch. [Open its executed outcome notebook](outcomes.ipynb).** It aggregates 72 invented personnel decisions across six fictional towns, joins 18 housing observations, preserves a missing value and plots construction rates. Run it from the repository root with `python -m jupyter nbconvert --execute --to notebook --inplace outcomes.ipynb`. The fictional data are unrelated to the archival town below.
+
 **[Open the executed walkthrough](walkthrough.ipynb)** to see the actual source excerpts, their OCR and the matching evidence. The [fictional-outcomes branch](https://github.com/ikarurs/synthetic-record-linkage/tree/fictional-outcomes) contains a separate, small municipal-outcomes exercise.
 
 This standalone example follows two reviewed cases from historical administrative-record work. The four images are **real scanned page excerpts**. Personal names and printed typography are retained. City, year, original page numbers, source filenames and identifying location headings are concealed or cropped out. Neutral labels replace source identifiers throughout the code, OCR and outputs.
