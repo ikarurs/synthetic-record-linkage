@@ -1,0 +1,25 @@
+SYNTHETIC MUNICIPAL REGISTER — fictional people and places
+Municipality: Birkenhafen
+Year: 1930
+
+01. Frieda Klein ; born ? ; role=engineer ; addr=Marktstrasse 10
+02. Ida Richter ; born ? ; role=engineer ; addr=?
+03. L. Woln ; born 1879 ; role=engineer ; addr=?
+04. Emil Meyer ; born ? ; role=clerk ; addr=?
+05. Walter Becker ; born 1876 ; role=engineer ; addr=Gartenweg 2
+06. F. Hoffmann ; born 1893 ; role=inspector ; addr=Marktstrasse 30
+07. C. Hoffmann ; born ? ; role=clerk ; addr=Marktstrasse 30
+08. Ida Hoffmann ; born 1890 ; role=archivist ; addr=Marktstrasse 18
+09. Karl Wagner ; born 1892 ; role=engineer ; addr=Gartenweg 33
+10. Emil Becker ; born 1878 ; role=registrar ; addr=?
+11. C. Wolf ; born ? ; role=archivist ; addr=Marktstrasse 24
+12. E. Weber ; born 1880 ; role=clerk ; addr=Marktstrasse 22
+13. Fritz Klein ; born 1888 ; role=registrar ; addr=?
+14. Emil Meyer ; born ? ; role=clerk ; addr=?
+15. Anna Koch ; born 1881 ; role=registrar ; addr=Marktstrasse 7
+16. Elise Becker ; born 1881 ; role=archivist ; addr=?
+17. Clara Becken ; born ? ; role=engineer ; addr=Marktstrasse 2
+18. Elise Wolf ; born 1883 ; role=clerk ; addr=Gartenweg 13
+19. Otto Schmidt ; born 1891 ; role=clerk ; addr=Gartenweg 34
+20. P. Wolf ; born 1888 ; role=inspector ; addr=Marktstrasse 13
+[illegible fragment: row structure could not be recovered]

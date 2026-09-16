@@ -1,0 +1,25 @@
+SYNTHETIC MUNICIPAL REGISTER — fictional people and places
+Municipality: Lindenfurt
+Year: 1930
+
+01. Emil Weber ; born 1871 ; role=clerk ; addr=Marktstrasse 14
+02. Karl Müller ; born 1884 ; role=inspector ; addr=Gartenweg 15
+03. Emil Meyer ; born ? ; role=clerk ; addr=?
+04. Elise Becker ; born 1889 ; role=archivist ; addr=Marktstrasse 37
+05. F. Schmidt ; born 1870 ; role=clerk ; addr=Marktstrasse 27
+06. F. Richter ; born 1876 ; role=archivist ; addr=Marktstrasse 14
+07. L. Becker ; born 1887 ; role=engineer ; addr=Marktstrasse 30
+08. Helene Weber ; born ? ; role=archivist ; addr=Marktstrasse 3
+09. Helene Richten ; born 1893 ; role=engineer ; addr=Marktstrasse 21
+10. Paul Hoffmann ; born 1890 ; role=clerk ; addr=Gartenweg 16
+11. Elise Wolf ; born 1884 ; role=inspector ; addr=Marktstrasse 16
+12. Walter Meyer ; born 1883 ; role=archivist ; addr=Gartenweg 18
+13. H. Meyen ; born 1888 ; role=registrar ; addr=Marktstrasse 12
+14. Luise Schmidt ; born 1868 ; role=engineer ; addr=Marktstrasse 24
+15. E. Schmidt ; born 1882 ; role=registrar ; addr=?
+16. Elise Becker ; born 1891 ; role=archivist ; addr=Marktstrasse 29
+17. Frieda Meyer ; born 1888 ; role=registrar ; addr=Marktstrasse 17
+18. Elise Klein ; born 1877 ; role=registrar ; addr=Gartenweg 16
+19. Fritz Schmidn ; born 1870 ; role=clerk ; addr=?
+20. Emil Meyer ; born ? ; role=clerk ; addr=?
+[illegible fragment: row structure could not be recovered]

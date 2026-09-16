@@ -1,0 +1,25 @@
+SYNTHETIC MUNICIPAL REGISTER — fictional people and places
+Municipality: Falkenbrueck
+Year: 1920
+
+01 | Wolf, Paul | b. 1888 | engineer | Marktstrasse 2
+02 | Koch, Helene | b. 1874 | engineer | Marktstrasse 28
+03 | Becker, Anna | b. 1888 | inspector | Marktstrasse 4
+04 | Klein, Paul | b. 1866 | clerk | Marktstrasse 34
+05 | Bauer, Fritz | b. 1894 | registrar | Marktstrasse 4
+06 | Richter, Karl | b. 1895 | clerk | Marktstrasse 6
+07 | Wolf, Max | b. 1895 | archivist | Marktstrasse 24
+08 | Wagner, Anna | b. 1890 | archivist | Marktstrasse 22
+09 | Meyer, Anna | b. 1883 | archivist | Marktstrasse 4
+10 | Bauer, Karl | b. 1890 | clerk | Marktstrasse 1
+11 | Wolf, Clara | b. 1891 | registrar | Marktstrasse 21
+12 | Koch, Otto | b. 1883 | inspector | Marktstrasse 31
+13 | Meyer, Ida | b. 1871 | registrar | Marktstrasse 32
+14 | Klein, Luise | b. 1872 | inspector | Marktstrasse 31
+15 | Schäfer, Elise | b. 1889 | registrar | Marktstrasse 18
+16 | Meyer, Emil | b. ? | clerk | ?
+17 | Müller, Helene | b. 1877 | archivist | Marktstrasse 30
+18 | Meyer, Helene | b. 1880 | inspector | Marktstrasse 30
+19 | Müller, Ernst | b. 1876 | archivist | Marktstrasse 7
+20 | Meyer, Emil | b. ? | clerk | ?
+[illegible fragment: row structure could not be recovered]

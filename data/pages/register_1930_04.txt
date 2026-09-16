@@ -1,0 +1,25 @@
+SYNTHETIC MUNICIPAL REGISTER — fictional people and places
+Municipality: Falkenbrueck
+Year: 1930
+
+01. Paul Wolf ; born 1888 ; role=engineer ; addr=Marktstrasse 2
+02. Clara Wolf ; born 1891 ; role=registrar ; addr=Marktstrasse 21
+03. I. Meyen ; born 1871 ; role=registrar ; addr=Marktstrasse 32
+04. Helene Hoffmann ; born 1885 ; role=engineer ; addr=Marktstrasse 29
+05. Elise Schaefer ; born 1889 ; role=registrar ; addr=Marktstrasse 18
+06. Emil Meyer ; born ? ; role=clerk ; addr=?
+07. Max Wolf ; born 1895 ; role=archivist ; addr=?
+08. Karl Richter ; born 1895 ; role=clerk ; addr=Marktstrasse 6
+09. Luise Wolf ; born 1872 ; role=clerk ; addr=Gartenweg 11
+10. Helene Meyer ; born 1885 ; role=clerk ; addr=Marktstrasse 19
+11. Luise Klein ; born 1872 ; role=inspector ; addr=Marktstrasse 31
+12. Fritz Wagner ; born 1874 ; role=registrar ; addr=Gartenweg 34
+13. O. Koch ; born 1883 ; role=inspector ; addr=?
+14. Walter Bauer ; born 1883 ; role=engineer ; addr=Gartenweg 28
+15. Emil Meyer ; born ? ; role=clerk ; addr=?
+16. Helene Mueller ; born 1877 ; role=archivist ; addr=Marktstrasse 30
+17. F. Bauer ; born ? ; role=registrar ; addr=?
+18. Ernst Mueller ; born 1876 ; role=archivist ; addr=Marktstrasse 7
+19. Fritz Schmidt ; born 1873 ; role=registrar ; addr=Gartenweg 10
+20. Helene Kocn ; born 1874 ; role=engineer ; addr=Marktstrasse 28
+[illegible fragment: row structure could not be recovered]

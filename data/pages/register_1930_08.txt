@@ -1,0 +1,25 @@
+SYNTHETIC MUNICIPAL REGISTER — fictional people and places
+Municipality: Wiesenfels
+Year: 1930
+
+01. Karl Fischer ; born 1876 ; role=engineer ; addr=Marktstrasse 33
+02. W. Hoffmann ; born 1865 ; role=archivist ; addr=Marktstrasse 39
+03. Emil Meyer ; born ? ; role=clerk ; addr=?
+04. Emil Meyer ; born ? ; role=clerk ; addr=?
+05. Frieda Koch ; born 1866 ; role=inspector ; addr=Marktstrasse 30
+06. Luise Weber ; born 1885 ; role=inspector ; addr=Marktstrasse 13
+07. Elise Klein ; born 1892 ; role=archivist ; addr=Gartenweg 22
+08. C. Wolf ; born 1870 ; role=engineer ; addr=Marktstrasse 38
+09. O. Wolf ; born 1885 ; role=engineer ; addr=Marktstrasse 38
+10. Anna Schaefer ; born 1888 ; role=engineer ; addr=Marktstrasse 26
+11. Fritz Müller ; born 1882 ; role=archivist ; addr=Gartenweg 39
+12. Frieda Klein ; born 1888 ; role=registrar ; addr=Gartenweg 37
+13. I. Hoffmann ; born ? ; role=engineer ; addr=Marktstrasse 24
+14. Karl Weber ; born 1881 ; role=archivist ; addr=Marktstrasse 11
+15. Frieda Becker ; born ? ; role=engineer ; addr=?
+16. Paul Fischer ; born 1883 ; role=inspector ; addr=Gartenweg 20
+17. Luise Schaefer ; born 1887 ; role=archivist ; addr=Marktstrasse 23
+18. Clara Becker ; born 1879 ; role=engineer ; addr=Marktstrasse 36
+19. Elise Wagner ; born 1891 ; role=registrar ; addr=Marktstrasse 23
+20. Otto Klein ; born 1884 ; role=archivist ; addr=Marktstrasse 3
+[illegible fragment: row structure could not be recovered]

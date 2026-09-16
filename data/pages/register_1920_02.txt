@@ -1,0 +1,25 @@
+SYNTHETIC MUNICIPAL REGISTER — fictional people and places
+Municipality: Birkenhafen
+Year: 1920
+
+01 | Weber, Ernst | b. 1880 | clerk | Marktstrasse 22
+02 | Becker, Clara | b. 1880 | engineer | Marktstrasse 2
+03 | Wolf, Luise | b. 1879 | engineer | Marktstrasse 40
+04 | Weber, Otto | b. 1868 | clerk | Marktstrasse 31
+05 | Koch, Anna | b. 1881 | registrar | Marktstrasse 7
+06 | Hoffmann, Frieda | b. 1893 | inspector | Marktstrasse 30
+07 | Schäfer, Ida | b. 1871 | clerk | Marktstrasse 36
+08 | Fischer, Karl | b. 1895 | clerk | Marktstrasse 22
+09 | Becker, Emil | b. 1866 | inspector | Marktstrasse 23
+10 | Meyer, Emil | b. ? | clerk | ?
+11 | Hoffmann, Clara | b. 1892 | clerk | Marktstrasse 30
+12 | Wolf, Paul | b. 1888 | inspector | Marktstrasse 13
+13 | Becker, Elise | b. 1881 | archivist | Marktstrasse 32
+14 | Schäfer, Fritz | b. 1892 | inspector | Marktstrasse 14
+15 | Richter, Ida | b. 1872 | engineer | Marktstrasse 18
+16 | Klein, Fritz | b. 1888 | engineer | Marktstrasse 6
+17 | Becker, Paul | b. 1876 | registrar | Marktstrasse 22
+18 | Meyer, Emil | b. ? | clerk | ?
+19 | Wolf, Clara | b. 1880 | archivist | Marktstrasse 24
+20 | Becker, Emil | b. 1878 | registrar | Marktstrasse 36
+[illegible fragment: row structure could not be recovered]

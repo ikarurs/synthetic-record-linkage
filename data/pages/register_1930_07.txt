@@ -1,0 +1,25 @@
+SYNTHETIC MUNICIPAL REGISTER — fictional people and places
+Municipality: Tannenhafen
+Year: 1930
+
+01. Clara Schaefen ; born 1882 ; role=inspector ; addr=Marktstrasse 39
+02. Elise Koch ; born 1871 ; role=registrar ; addr=Gartenweg 10
+03. Emil Klein ; born 1886 ; role=clerk ; addr=Marktstrasse 38
+04. W. Schaefen ; born 1882 ; role=engineer ; addr=?
+05. Emil Kocn ; born ? ; role=clerk ; addr=Marktstrasse 7
+06. Marta Kocn ; born 1890 ; role=engineer ; addr=Marktstrasse 17
+07. Ernst Schaefen ; born ? ; role=archivist ; addr=Marktstrasse 1
+08. Clara Schaefer ; born ? ; role=inspector ; addr=Marktstrasse 8
+09. Luise Wolf ; born 1877 ; role=engineer ; addr=Marktstrasse 28
+10. C. Mueller ; born 1895 ; role=inspector ; addr=Marktstrasse 6
+11. Ida Schmidt ; born ? ; role=clerk ; addr=Marktstrasse 15
+12. Walter Fischer ; born 1865 ; role=inspector ; addr=Gartenweg 24
+13. Emil Meyer ; born ? ; role=clerk ; addr=?
+14. Emil Meyer ; born ? ; role=clerk ; addr=?
+15. Karl Meyen ; born 1871 ; role=inspector ; addr=Marktstrasse 39
+16. Helene Weber ; born 1894 ; role=clerk ; addr=Gartenweg 30
+17. Helene Schaefen ; born 1892 ; role=registrar ; addr=?
+18. Helene Schmidt ; born 1893 ; role=registrar ; addr=Gartenweg 36
+19. Luise Fischen ; born 1879 ; role=inspector ; addr=Marktstrasse 14
+20. Elise Richter ; born ? ; role=clerk ; addr=?
+[illegible fragment: row structure could not be recovered]

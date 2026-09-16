@@ -1,0 +1,25 @@
+SYNTHETIC MUNICIPAL REGISTER — fictional people and places
+Municipality: Wiesenfels
+Year: 1920
+
+01 | Schmidt, Otto | b. 1882 | archivist | Marktstrasse 2
+02 | Meyer, Emil | b. ? | clerk | ?
+03 | Schäfer, Anna | b. 1888 | engineer | Marktstrasse 26
+04 | Wagner, Elise | b. 1891 | registrar | Marktstrasse 23
+05 | Fischer, Luise | b. 1875 | engineer | Marktstrasse 2
+06 | Becker, Luise | b. 1887 | engineer | Marktstrasse 30
+07 | Koch, Frieda | b. 1866 | inspector | Marktstrasse 30
+08 | Becker, Clara | b. 1879 | engineer | Marktstrasse 36
+09 | Hoffmann, Ida | b. 1883 | engineer | Marktstrasse 24
+10 | Weber, Luise | b. 1885 | inspector | Marktstrasse 13
+11 | Becker, Frieda | b. 1891 | engineer | Marktstrasse 9
+12 | Weber, Karl | b. 1881 | archivist | Marktstrasse 11
+13 | Weber, Marta | b. 1882 | registrar | Marktstrasse 16
+14 | Wolf, Otto | b. 1885 | engineer | Marktstrasse 38
+15 | Hoffmann, Walter | b. 1865 | archivist | Marktstrasse 39
+16 | Klein, Otto | b. 1884 | archivist | Marktstrasse 3
+17 | Fischer, Karl | b. 1876 | engineer | Marktstrasse 33
+18 | Müller, Ida | b. 1889 | engineer | Marktstrasse 32
+19 | Meyer, Emil | b. ? | clerk | ?
+20 | Schmidt, Fritz | b. 1870 | clerk | Marktstrasse 4
+[illegible fragment: row structure could not be recovered]

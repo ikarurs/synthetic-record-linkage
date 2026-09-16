@@ -1,0 +1,25 @@
+SYNTHETIC MUNICIPAL REGISTER — fictional people and places
+Municipality: Lindenfurt
+Year: 1920
+
+01 | Meyer, Emil | b. ? | clerk | ?
+02 | Meyer, Frieda | b. 1888 | registrar | Marktstrasse 17
+03 | Meyer, Helene | b. 1888 | registrar | Marktstrasse 12
+04 | Koch, Frieda | b. 1883 | inspector | Marktstrasse 8
+05 | Meyer, Emil | b. ? | clerk | ?
+06 | Schmidt, Fritz | b. 1870 | registrar | Marktstrasse 27
+07 | Weber, Emil | b. 1871 | clerk | Marktstrasse 14
+08 | Wagner, Helene | b. 1895 | engineer | Marktstrasse 17
+09 | Becker, Elise | b. 1889 | archivist | Marktstrasse 37
+10 | Richter, Frieda | b. 1876 | clerk | Marktstrasse 14
+11 | Richter, Max | b. 1882 | registrar | Marktstrasse 35
+12 | Wolf, Fritz | b. 1878 | clerk | Marktstrasse 16
+13 | Becker, Elise | b. 1891 | archivist | Marktstrasse 29
+14 | Becker, Anna | b. 1872 | clerk | Marktstrasse 31
+15 | Schmidt, Luise | b. 1868 | engineer | Marktstrasse 24
+16 | Weber, Helene | b. 1876 | archivist | Marktstrasse 3
+17 | Richter, Helene | b. 1893 | inspector | Marktstrasse 21
+18 | Schmidt, Ernst | b. 1882 | registrar | Marktstrasse 17
+19 | Weber, Ernst | b. 1889 | inspector | Marktstrasse 34
+20 | Wolf, Elise | b. 1884 | inspector | Marktstrasse 16
+[illegible fragment: row structure could not be recovered]
