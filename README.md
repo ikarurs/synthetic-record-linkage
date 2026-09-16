@@ -13,13 +13,19 @@ This standalone example follows two reviewed cases from historical administrativ
 
 These are reviewed identity judgements, not manufactured ground truth. In the original review, no later match was found for the second anchor. The public excerpts illustrate the rejected candidate; they do not reproduce the complete roster search or establish that nobody else on those pages reappears.
 
+## Read the evidence
+
+The annotated matrix separates name and context evidence; the stacked bars show how it enters the ranking score. Direct labels, exact values and patterns make the comparisons readable without relying on colour. Conflicting given names reject a candidate independently of the score.
+
+![Candidate evidence and weighted scores: Aug. Huber is accepted; Simon Huber and Roman Eder have conflicting given names.](outputs/evidence.png)
+
 ## Source pages
 
-The original page layout, paper, Fraktur and line breaks remain visible. Click an image to zoom.
+The original page layout, paper, Fraktur and line breaks remain visible. Page locators and enlarged details sit beside the actual OCR fields, so the reader can audit the path from pixels to comparable names and roles. Blue boxes are manually reviewed display windows, not OCR detections.
 
-| Earlier source, example A | Later source, example A |
-|---|---|
-| [![Earlier archival excerpt](data/pages/sample-a-before.png)](data/pages/sample-a-before.png) | [![Later archival excerpt](data/pages/sample-a-after.png)](data/pages/sample-a-after.png) |
+![Earlier Huber August and later Aug. Huber: original printed details, preserved OCR fields and parsed names.](outputs/source_a.png)
+
+Full excerpts: [A, earlier](data/pages/sample-a-before.png) · [A, later](data/pages/sample-a-after.png) · [B, earlier](data/pages/sample-b-before.png) · [B, later](data/pages/sample-b-after.png). The notebook also shows the [rejected Eder comparison](outputs/source_b.png).
 
 The [four-page source PDF](data/source-excerpts.pdf) contains only the redacted raster images; original images, text layers and PDF metadata are not embedded. The private source map and redaction preparation files are not part of this repository. This conceals direct source identifiers; retained historical names and other context are not a guarantee against identification through independent research.
 
@@ -73,8 +79,9 @@ Acceptance needs score ≥ 0.84, margin ≥ 0.08 on both sides, mutual best choi
 | `linkage.py` | Name order, candidate generation, evidence and decisions |
 | `run.py` | Offline pipeline and audit tables |
 | `walkthrough.ipynb` | Executed source → OCR → matching walkthrough |
+| `visualise.py` | Source-detail views, annotated evidence matrix and weighted-score decomposition |
 | `data/anchors.csv` | Which two earlier entries to examine; no outcome labels |
 | `data/reviewed_pairs.csv` | Separately stored human-review decisions |
-| `outputs/` | Extracted records, candidates, decisions and review comparison |
+| `outputs/` | Audit CSVs and reproducible PNG/SVG figures |
 
 Prepared with AI coding assistance for Urs Maier. The repository runs independently: no imports, submodules, paths, credentials or services from the private research project are required. The outcome branch uses entirely fictional data and does not attach invented outcomes to the historical people or source town.
