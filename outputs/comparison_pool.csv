@@ -1,0 +1,16 @@
+case_id,left_id,right_id,left_name,right_name,right_page,surname_similarity,given_relation,given_agreement,career_similarity,institution_similarity,score,ocr_min
+,sample-a-before:011,sample-a-after:017,Hochrein Theodor,Theodor Hochrein,sample-a-after,1.0,exact,1.0,0.6923076923076923,1.0,1.0,0.98
+,sample-a-before:016,sample-a-after:030,Huber Ludwig,Simon Huber,sample-a-after,1.0,conflict,0.0,0.3125,0.5384615384615384,0.6576923076923078,0.98
+,sample-a-before:016,sample-a-after:027,Huber Ludwig,Aug. Huber,sample-a-after,1.0,conflict,0.0,0.34782608695652173,0.42857142857142855,0.6357142857142858,0.98
+,sample-a-before:019,sample-b-after:014,Heilmeier Josef,Jakob Heilmeier,sample-b-after,1.0,conflict,0.0,0.5294117647058824,0.21739130434782608,0.6558823529411766,0.95
+,sample-a-before:019,sample-b-after:010,Heilmeier Josef,Georg Eiblmeier,sample-b-after,0.8888888888888888,conflict,0.0,0.2898550724637681,0.26865671641791045,0.5468599033816426,0.95
+,sample-b-before:008,sample-b-after:013,Fischer Philipp,Jos. Fischer,sample-b-after,1.0,conflict,0.0,0.4827586206896552,0.0,0.646551724137931,0.95
+,sample-b-before:020,sample-a-after:025,Köppel Adolf,Max Köppel,sample-a-after,1.0,conflict,0.0,0.4864864864864865,0.0,0.6472972972972973,0.95
+,sample-b-before:020,sample-a-after:034,Köppel Adolf,Max Köppel,sample-a-after,1.0,conflict,0.0,0.4864864864864865,0.0,0.6472972972972973,0.95
+,sample-b-before:035,sample-b-after:011,Wießner Karl,Walter Wieser,sample-b-after,0.8571428571428571,conflict,0.0,0.2222222222222222,0.3047619047619048,0.5323809523809524,0.95
+,sample-b-before:036,sample-b-after:009,Seider Albert,Fritz Seiler,sample-b-after,0.8333333333333334,conflict,0.0,0.3235294117647059,0.35555555555555557,0.5294444444444445,0.95
+,sample-b-before:044,sample-a-after:023,Graf Josef,Seb. Graf,sample-a-after,1.0,conflict,0.0,0.25806451612903225,0.15384615384615385,0.6016129032258065,0.95
+,sample-b-before:051,sample-a-after:018,Albrecht Paul,Georg Leibrecht,sample-a-after,0.8235294117647058,conflict,0.0,0.2857142857142857,0.12195121951219512,0.5100840336134453,0.95
+A,sample-a-before:023,sample-a-after:027,Huber August,Aug. Huber,sample-a-after,1.0,abbreviation,0.8,1.0,0.5945945945945946,0.9500000000000001,0.98
+A,sample-a-before:023,sample-a-after:030,Huber August,Simon Huber,sample-a-after,1.0,conflict,0.0,0.4,0.05714285714285714,0.6300000000000001,0.98
+B,sample-b-before:024,sample-b-after:006,Eder Rupert,Roman Eder,sample-b-after,1.0,conflict,0.0,0.2727272727272727,0.2601626016260163,0.6045454545454546,0.95

@@ -1,45 +1,45 @@
-# From archival pages to matched personnel
+# From archival pages to auditable personnel links
 
-**[Open the executed walkthrough](walkthrough.ipynb)** to see the actual source excerpts, their OCR and the matching evidence. The [fictional-outcomes branch](https://github.com/ikarurs/synthetic-record-linkage/tree/fictional-outcomes) contains a separate, small municipal-outcomes exercise.
+The wider research studies how administrative personnel persist or change through political transitions, and how that continuity relates to later economic outcomes. This example demonstrates the data construction needed to investigate that question: converting archival pages into structured records and auditable links between people.
 
-This standalone example follows two reviewed cases from historical administrative-record work. The four images are **real scanned page excerpts**. Personal names and printed typography are retained. City, year, original page numbers, source filenames and identifying location headings are concealed or cropped out. Neutral labels replace source identifiers throughout the code, OCR and outputs.
+**[Read the executed walkthrough](walkthrough.ipynb).** It follows two deliberately selected cases: an accepted identity and a rejected candidate. The four page excerpts are real; names and original printing remain visible while the city, exact years and source identifiers are concealed. The [separate outcome notebook](https://github.com/ikarurs/synthetic-record-linkage/blob/fictional-outcomes/outcomes.ipynb) uses entirely fictional municipal data to show how validated links could eventually support aggregation and outcome analysis.
 
-| Example | Earlier source | Later candidate | Reviewed result |
-|---|---|---|---|
-| A | Huber August | Aug. Huber | Same person: compatible abbreviated name and closely related youth-welfare office |
-| B | Eder Rupert | Roman Eder | Different people: surname agrees, given names and careers do not |
+## What this example demonstrates
 
-These are reviewed identity judgements, not manufactured ground truth. In the original review, no later match was found for the second anchor. The public excerpts illustrate the rejected candidate; they do not reproduce the complete roster search or establish that nobody else on those pages reappears.
+| Input or comparison | Scope |
+|---|---|
+| Redacted archival excerpts | 4 |
+| Extracted entries | 137: 77 earlier, 60 later |
+| Candidate generation | All earlier × later entries within the same neutral town |
+| Pairs passing the surname filter | 15, including 3 involving the two focal anchors |
+| Decisions presented | 2 selected earlier entries |
 
-## Read the evidence
+An **entry** is one printed occurrence, not necessarily a distinct person. An **anchor** is an earlier entry chosen for explanation. The excerpts are not complete municipal rosters. All 15 candidate pairs, including conflicting given names, contribute to competition; only the two anchors receive reported decisions.
 
-The annotated matrix separates name and context evidence; the stacked bars show how it enters the ranking score. Direct labels, exact values and patterns make the comparisons readable without relying on colour. Conflicting given names reject a candidate independently of the score.
+| Earlier entry | Later candidate | Illustrated decision |
+|---|---|---|
+| Huber August | Aug. Huber | Accepted: compatible abbreviation and rank/office evidence |
+| Eder Rupert | Roman Eder | Rejected: conflicting given names and different careers |
 
-![Candidate evidence and weighted scores: Aug. Huber is accepted; Simon Huber and Roman Eder have conflicting given names.](outputs/evidence.png)
+The cases were chosen to contrast these situations, not sampled to estimate performance. They use previously recorded review judgements and the source evidence shown here. **The sample does not document the original reviewer, review date or additional corroboration.** Separately storing labels does not make this an independent validation exercise. The prior review reportedly found no later match for Rupert Eder; these excerpts only support inspecting and rejecting the displayed Roman Eder candidate.
 
-## Source pages
+## See the process
 
-The original page layout, paper, Fraktur and line breaks remain visible. Page locators and enlarged details sit beside the actual OCR fields, so the reader can audit the path from pixels to comparable names and roles. Blue boxes are manually reviewed display windows, not OCR detections.
+**Redacted page → saved OCR → comparable fields → excerpt-wide candidates → two-sided competition → decision → review comparison**
 
-![Earlier Huber August and later Aug. Huber: original printed details, preserved OCR fields and parsed names.](outputs/source_a.png)
+The first figure places the original printed detail beside its actual saved OCR fields. Read across the rows: name order changes, August becomes Aug., and the same rank lands in different role/title fields. Blue boxes are manually reviewed display windows, not OCR detections.
 
-Full excerpts: [A, earlier](data/pages/sample-a-before.png) · [A, later](data/pages/sample-a-after.png) · [B, earlier](data/pages/sample-b-before.png) · [B, later](data/pages/sample-b-after.png). The notebook also shows the [rejected Eder comparison](outputs/source_b.png).
+![Printed Huber entries, saved OCR fields and derived names in the two periods.](outputs/source_a.png)
 
-The [four-page source PDF](data/source-excerpts.pdf) contains only the redacted raster images; original images, text layers and PDF metadata are not embedded. The private source map and redaction preparation files are not part of this repository. This conceals direct source identifiers; retained historical names and other context are not a guarantee against identification through independent research.
+The evidence figure separates similarity from the decision. Its lower panels show both directions of competition: Aug. Huber versus Simon Huber for the earlier anchor, and Huber August versus Huber Ludwig for the proposed later entry. The forward margin is 0.320; the reverse margin is about 0.314. Both exceed the illustrative 0.08 requirement.
 
-## Follow the pipeline
+![Comparison evidence, score contributions and competing entries in both directions.](outputs/evidence.png)
 
-1. **OCR:** Gemini reads each redacted image and returns a transcription plus named entries, roles, titles and institution paths. It sees neither the original source nor matching labels.
-2. **Assemble:** preserve each raw name and entry, attach the neutral page ID and image hash, and derive comparison fields. Unseen headings remain unknown.
-3. **Find candidates:** search later entries in the same neutral town, using surname similarity. Resolve order from the visually reviewed page convention or an explicit comma; do not expand abbreviated names.
-4. **Compare:** inspect surname and given-name evidence, institutional context, and rank/role text. A common surname alone does not establish identity.
-5. **Decide and review:** require enough evidence, a clear margin and mutual preference. Compare the resulting decisions with the independently saved review labels.
+The walkthrough also includes the [Eder source comparison](outputs/source_b.png), the actual OCR prompt and response excerpt, one complete score calculation, full review explanations, and PNG/SVG exports. Full excerpts: [A earlier](data/pages/sample-a-before.png), [A later](data/pages/sample-a-after.png), [B earlier](data/pages/sample-b-before.png), [B later](data/pages/sample-b-after.png).
 
-`data/ocr/` contains **actual saved Gemini responses**, with the model, capture time, token usage and image/prompt/schema hashes. `python run.py` verifies and replays them offline. It does not claim to perform a new OCR run. The notebook shows the saved transcription beside the source evidence.
+## Reproduce offline
 
-## Run
-
-Tested with Python 3.13.7:
+Tested with Python 3.13.7. From the repository root:
 
 ```bash
 python -m venv .venv
@@ -51,35 +51,45 @@ python -m unittest -v
 python -m jupyter nbconvert --execute --to notebook --inplace walkthrough.ipynb
 ```
 
-The CLI resolves files relative to its own directory. After installation the saved-response path is offline and needs no credentials. Live OCR is optional and incurs API charges:
+After installation, these commands need no credentials or API calls. They verify the redacted-image, prompt, schema and configuration hashes, replay actual saved Gemini responses, and regenerate the tables and figures. Expected results are the counts above, one accepted focal link and one `no_link`. `python run.py` resolves files relative to its own directory; execute notebooks from the repository root.
+
+Optional live OCR is explicit and incurs API charges:
 
 ```bash
 # Set GOOGLE_API_KEY securely in your environment; never commit it.
 python ocr.py --live
-python run.py
 ```
 
-`--page sample-a-before` reruns one image; `--model MODEL` selects another compatible model. Fresh responses may differ. Each response is checked before replacing its saved file; source or prompt changes invalidate the cache. The API request follows Google's [GenerateContent documentation](https://ai.google.dev/api/generate-content).
+`--page sample-a-before` reruns one image; `--model MODEL` selects a compatible model. The API reads only the redacted image, prompt and schema, never the other period or review labels. Responses are checked before replacement and may differ between runs. See Google's [GenerateContent documentation](https://ai.google.dev/api/generate-content).
 
-## What the small matcher does
+## Methods and limits
 
-Within-town surname similarity must be at least 0.82. The illustrative ranking score is `0.55 surname + 0.25 given + 0.20 max(career, institution)`. Exact given names score 1; a compatible multi-letter abbreviation scores 0.8; a single initial scores 0.5. Conflicting given names reject a candidate. Initial-only or missing given names stay under review.
+Name order follows a visually checked page convention, overridden by explicit commas. Names are lowercased; umlauts become ae/oe/ue, ß becomes ss, and punctuation is removed. Abbreviated given names are compared as prefixes, never expanded into invented names. Mixed-order and compound names outside the focal examples are not all manually validated.
 
-Acceptance needs score ≥ 0.84, margin ≥ 0.08 on both sides, mutual best choice and page confidence ≥ 0.8. Ties never pass, even with a zero margin. Only accepted decisions populate `right_id`. A score is not a probability, and the model's self-rated OCR confidence is not measured extraction accuracy.
+Surname, rank/role and office comparisons use Python's `difflib.SequenceMatcher` ratio: twice the number of characters in matching blocks divided by the combined string lengths. This measures textual similarity, not shared meaning. Empty fields contribute zero. Surname similarity must reach 0.82. Exact given names score 1, compatible multi-letter prefixes 0.8, single initials 0.5, and conflicts or missing names 0. Rank abbreviations are normalised using an explicit short list. All four role/title field combinations are compared, retaining the highest similarity. Office similarity compares the normalised full heading path.
 
-**This is an inspectable teaching implementation, not the complete research matcher.** It uses reviewed page-level name order and a simple rule, without fitting a model on two examples. The research workflow additionally handles within-book entity assembly, richer name-order context, name-frequency evidence, fitted models and town-separated validation. Crops can omit headings or other candidates, and OCR can misread names. This sample therefore reports cases and evidence, not a general accuracy estimate or a continuity rate.
+The illustrative ranking score is **0.55 × surname + 0.25 × given name + 0.20 × max(rank/role, office)**. These weights and the thresholds are teaching choices, not fitted or calibrated estimates. The walkthrough calls the same functions as the pipeline to show the strings, component scores and weighted contributions.
 
-## Files
+Acceptance requires score ≥ 0.84, compatible name evidence, strict preference in both directions, margins ≥ 0.08 where alternatives exist, and page confidence ≥ 0.8. Conflicts reject; initial-only or missing names remain under review; ties never pass. Both comparison directions use the complete blocked excerpt pool, including given-name conflicts. A margin is the proposed pair's score minus its strongest alternative's score. A missing alternative produces a blank margin and **“No competing candidate”**, not a comparison against zero; the other safeguards still apply. Reverse margins can be negative when a rival wins. Only accepted decisions receive a linked `right_id`.
 
-| File | Purpose |
+A score is not a probability. Gemini's page confidence is self-reported, not measured extraction accuracy. A given-name conflict can score at most 0.75 under these weights, already below 0.84; the explicit conflict rule explains the rejection and still protects against conflicts if the threshold is lowered. Removing the guard alone cannot change these displayed decisions.
+
+This standalone teaching implementation does not reproduce the research workflow's entity assembly, richer name-order handling, name-frequency evidence, fitted models or town-separated validation. Selected cases cannot estimate general accuracy, population continuity or economic effects. A missing observed link is not evidence of departure or its cause.
+
+The [source PDF](data/source-excerpts.pdf) contains only redacted raster images, without original image files, text layers or source metadata. Neutral identifiers are used in all public outputs; the private source map is excluded. Concealing direct identifiers cannot guarantee that retained names and context are untraceable through independent research.
+
+## Audit files
+
+| File | Contents |
 |---|---|
-| `ocr.py` | Live image extraction and hash-checked saved-response replay |
-| `linkage.py` | Name order, candidate generation, evidence and decisions |
-| `run.py` | Offline pipeline and audit tables |
-| `walkthrough.ipynb` | Executed source → OCR → matching walkthrough |
-| `visualise.py` | Source-detail views, annotated evidence matrix and weighted-score decomposition |
-| `data/anchors.csv` | Which two earlier entries to examine; no outcome labels |
-| `data/reviewed_pairs.csv` | Separately stored human-review decisions |
-| `outputs/` | Audit CSVs and reproducible PNG/SVG figures |
+| `data/ocr/` | Actual saved responses, full transcriptions and hash/model metadata |
+| `outputs/records.csv`, `outputs/pages.csv` | All extracted entries and page audit (`people` is a legacy column meaning entries) |
+| `outputs/comparison_pool.csv` | All 15 blocked pairs; blank `case_id` means a supporting earlier entry, not a focal anchor |
+| `outputs/candidates.csv` | The three focal candidate pairs |
+| `outputs/matches.csv` | Two decisions, candidate counts, competitor IDs/scores, both margins and applied thresholds |
+| `data/reviewed_pairs.csv`, `outputs/review_comparison.csv` | Previously recorded judgements and their comparison with pipeline decisions |
+| `linkage.py`, `visualise.py` | Matching rules and reproducible figures |
 
-Prepared with AI coding assistance for Urs Maier. The repository runs independently: no imports, submodules, paths, credentials or services from the private research project are required. The outcome branch uses entirely fictional data and does not attach invented outcomes to the historical people or source town.
+`candidate_count` and `reverse_candidate_count` include the proposed pair. `runner_up_id/score` identify the strongest other later entry; `reverse_runner_up_id/score` identify the strongest other earlier entry. With no alternative, both the competitor fields and corresponding margin are blank in CSV (`None` in Python). The two focal cases are defined in `data/anchors.csv`, separately from review labels.
+
+Prepared with AI coding assistance for Urs Maier. This repository runs independently of the private research project. The outcome branch's invented towns and observations cannot be joined to the real historical people or source town.
