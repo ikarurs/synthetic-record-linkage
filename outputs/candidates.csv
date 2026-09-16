@@ -1,4 +1,4 @@
 case_id,left_id,right_id,left_name,right_name,right_page,surname_similarity,given_relation,given_agreement,career_similarity,institution_similarity,score,ocr_min
-A,sample-a-before:023,sample-a-after:027,Huber August,Aug. Huber,sample-a-after,1.0,abbreviation,0.8,1.0,0.5945945945945946,0.95,0.98
+A,sample-a-before:023,sample-a-after:027,Huber August,Aug. Huber,sample-a-after,1.0,abbreviation,0.8,1.0,0.5945945945945946,0.9500000000000001,0.98
 A,sample-a-before:023,sample-a-after:030,Huber August,Simon Huber,sample-a-after,1.0,conflict,0.0,0.4,0.05714285714285714,0.6300000000000001,0.98
 B,sample-b-before:024,sample-b-after:006,Eder Rupert,Roman Eder,sample-b-after,1.0,conflict,0.0,0.2727272727272727,0.2601626016260163,0.6045454545454546,0.95
